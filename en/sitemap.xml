@@ -2,351 +2,123 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Paradoxical.github.io/authors/</loc>
+    <loc>https://yathenstianbase.github.io/authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/authors/"
+                href="https://yathenstianbase.github.io/pt-br/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/authors/"
+                href="https://yathenstianbase.github.io/authors/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/authors/hugo-authors/</loc>
+    <loc>https://yathenstianbase.github.io/authors/hugo-authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/autores/autores-de-hugo/"
+                href="https://yathenstianbase.github.io/pt-br/autores/yathen/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/authors/hugo-authors/"
+                href="https://yathenstianbase.github.io/authors/hugo-authors/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/</loc>
+    <loc>https://yathenstianbase.github.io/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/"
+                href="https://yathenstianbase.github.io/pt-br/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/"
+                href="https://yathenstianbase.github.io/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/series/hugo/</loc>
-    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/about/</loc>
   </url><url>
-    <loc>https://Paradoxical.github.io/posts/mermaid-support/</loc>
-    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/posts/bubblesort-code/</loc>
   </url><url>
-    <loc>https://Paradoxical.github.io/posts/</loc>
-    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/tags/c#/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/"
+                href="https://yathenstianbase.github.io/pt-br/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/posts/"
+                href="https://yathenstianbase.github.io/categories/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/series/</loc>
-    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/contact/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/dsa/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/projects/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/series/"
+                href="https://yathenstianbase.github.io/pt-br/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/series/"
+                href="https://yathenstianbase.github.io/series/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/series/theme/</loc>
-    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://Paradoxical.github.io/categories/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/categories/syntax/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/categories/"
+                href="https://yathenstianbase.github.io/pt-br/categoria/sintaxe/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/categories/"
+                href="https://yathenstianbase.github.io/categories/syntax/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/tags/css/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/css/"
+                href="https://yathenstianbase.github.io/pt-br/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/tags/css/"
+                href="https://yathenstianbase.github.io/tags/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/tags/html/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/categories/themes/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/html/"
+                href="https://yathenstianbase.github.io/pt-br/categoria/temas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://Paradoxical.github.io/tags/html/"
+                href="https://yathenstianbase.github.io/categories/themes/"
                 />
   </url><url>
-    <loc>https://Paradoxical.github.io/posts/html-and-css-only-tabs/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
+    <loc>https://yathenstianbase.github.io/series/themes-guide/</loc>
   </url><url>
-    <loc>https://Paradoxical.github.io/tags/markdown/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/markdown/"
-                />
+    <loc>https://yathenstianbase.github.io/tags/unity/</loc>
   </url><url>
-    <loc>https://Paradoxical.github.io/categories/syntax/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/categoria/sintaxe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/categories/syntax/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/categories/themes/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/categoria/temas/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/categories/themes/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/series/themes-guide/</loc>
-    <lastmod>2022-05-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://Paradoxical.github.io/posts/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/markdown-syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/posts/markdown-syntax/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/posts/more-rich-content/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/more-rich-content/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/posts/more-rich-content/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/posts/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/placeholder-text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/posts/placeholder-text/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/shortcodes/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/shortcodes/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/text/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/text/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/posts/math-typesetting/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/math-typesetting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/posts/math-typesetting/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/emoji/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/emoji/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/posts/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/emoji-support/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/posts/emoji-support/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/development/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/development/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/development/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/categories/development/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/categories/development/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/categories/development/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/posts/hugo-coder-wiki/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/posts/hugo-coder-wiki/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/posts/hugo-coder-wiki/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/hugo/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/hugo/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/tags/themes/</loc>
-    <lastmod>2019-03-04T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://Paradoxical.github.io/pt-br/tags/themes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Paradoxical.github.io/tags/themes/"
-                />
-  </url><url>
-    <loc>https://Paradoxical.github.io/about/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://Paradoxical.github.io/contact/</loc>
-  </url><url>
-    <loc>https://Paradoxical.github.io/projects/</loc>
+    <loc>https://yathenstianbase.github.io/authors/yathen-authors/</loc>
   </url>
 </urlset>

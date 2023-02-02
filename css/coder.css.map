@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "coder.css",
-	"sourceRoot": "L:/Hugo/46156845/test",
+	"sourceRoot": "L:/Hugo/46156845/yathenstianbase.github.io",
 	"sources": [
 		"assets/scss/coder.scss",
 		"assets/scss/css/normalize.css",
