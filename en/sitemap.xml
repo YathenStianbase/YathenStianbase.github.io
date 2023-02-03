@@ -63,6 +63,8 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/dsa/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/categories/dsa/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/posts/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/projects/</loc>
@@ -79,17 +81,11 @@
                 href="https://yathenstianbase.github.io/series/"
                 />
   </url><url>
-    <loc>https://yathenstianbase.github.io/categories/syntax/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://yathenstianbase.github.io/pt-br/categoria/sintaxe/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://yathenstianbase.github.io/categories/syntax/"
-                />
+    <loc>https://yathenstianbase.github.io/tags/shader/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/categories/shader/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/stencilbuffer/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/</loc>
     <xhtml:link
@@ -101,18 +97,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://yathenstianbase.github.io/tags/"
-                />
-  </url><url>
-    <loc>https://yathenstianbase.github.io/categories/themes/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://yathenstianbase.github.io/pt-br/categoria/temas/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://yathenstianbase.github.io/categories/themes/"
                 />
   </url><url>
     <loc>https://yathenstianbase.github.io/series/themes-guide/</loc>

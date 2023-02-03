@@ -7,12 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/dsa/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BubbleSort[冒泡排序可视化]</title>
-      <link>https://yathenstianbase.github.io/posts/bubblesort-code/</link>
+      <title>Stencil [深度模板] 与 RayMarch[光线步进]</title>
+      <link>https://yathenstianbase.github.io/posts/stencilbuffer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/bubblesort-code/</guid>
-      <description>using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI; public class BubbleSort : MonoBehaviour { // info public Text info; public Text statistics; public Button startbutton; // 可选开关 public bool IsManully = false; [SerializeReference] public int[] numbers = new int[10]; public bool isRandomNum = false; public int RandomMin = -9; public int RandomMax = 9; // 协程 Coroutine numCoroutine; // 递归 IEnumerator numEnumerator; Coroutine coroutineSort; Coroutine coroutineObj; // 动画事件 public delegate void SwitchEvent(int first, int last); public static SwitchEvent switchEvent; // 展示层 public GameObject BubblePrefab; public GameObject[] Bubbles; void Start() { StartCoroutine(Init()); // 冒泡排序 // Sort(); // Print(numbers); // numCoroutine = StartCoroutine(CoroutinePrint(numbers)); // numEnumerator = numbers.</description>
+      <guid>https://yathenstianbase.github.io/posts/stencilbuffer/</guid>
+      <description>光线步进Code：
+Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#34;Texture&amp;#34;, 2D) = &amp;#34;white&amp;#34; {} _CameraPos(&amp;#34;CameraPos&amp;#34;, vector) = (0.,3,0.) _CubeSize(&amp;#34;CubeSize&amp;#34;, vector) = (0.5,0.5,0.5,1) _CubePos(&amp;#34;CubePos&amp;#34;, vector) = (0,0.5,4,0) _CubeRotSpeed(&amp;#34;CubeRotSpeed&amp;#34;, float) = 0 _CubeScale(&amp;#34;CubeScale&amp;#34;, float) = 1 _CubeMirroOpt(&amp;#34;CubeMirroOpt&amp;#34;,vector) = (0,0,0,0) _CubeScaleOpt(&amp;#34;CubeScaleOpt&amp;#34;,vector) = (0,0,0,0) _CubeRotOpt(&amp;#34;CubeRotOpt&amp;#34;,vector) = (0,0,0,0) _DirectLightPos(&amp;#34;DirectLightPos&amp;#34;,vector) = (0,5,6) _MainColor(&amp;#34;MainColor&amp;#34;,Color) = (0.25, 0.65, 0.99,0.00) // stencil _StencilReferenceID(&amp;#34;Stencil ID Reference&amp;#34;, Float) = 1 [Enum(UnityEngine.Rendering.CompareFunction)] _StencilComp(&amp;#34;Stencil Comparison&amp;#34;, Float) = 3 [Enum(UnityEngine.Rendering.StencilOp)] _StencilOp(&amp;#34;Stencil Operation&amp;#34;, Float) = 0 _StencilWriteMask(&amp;#34;Stencil Write Mask&amp;#34;, Float) = 255 _StencilReadMask(&amp;#34;Stencil Read Mask&amp;#34;, Float) = 255 } SubShader { Tags { &amp;#34;Queue&amp;#34;	= &amp;#34;Geometry&amp;#34; &amp;#34;RenderType&amp;#34; = &amp;#34;StencilOpaque&amp;#34; } Stencil { Ref[_StencilReferenceID] Comp[_StencilComp] Pass[_StencilOp]	// keep ReadMask[_StencilReadMask] WriteMask[_StencilWriteMask] } Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #include &amp;#34;UnityCG.</description>
     </item>
     
   </channel>
