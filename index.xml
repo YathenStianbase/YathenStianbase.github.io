@@ -20,12 +20,13 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
     </item>
     
     <item>
-      <title>BubbleSort[冒泡排序可视化]</title>
+      <title>BubbleSort [冒泡排序可视化]</title>
       <link>https://yathenstianbase.github.io/posts/bubblesort-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/posts/bubblesort-code/</guid>
-      <description>using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI; public class BubbleSort : MonoBehaviour { // info public Text info; public Text statistics; public Button startbutton; // 可选开关 public bool IsManully = false; [SerializeReference] public int[] numbers = new int[10]; public bool isRandomNum = false; public int RandomMin = -9; public int RandomMax = 9; // 协程 Coroutine numCoroutine; // 递归 IEnumerator numEnumerator; Coroutine coroutineSort; Coroutine coroutineObj; // 动画事件 public delegate void SwitchEvent(int first, int last); public static SwitchEvent switchEvent; // 展示层 public GameObject BubblePrefab; public GameObject[] Bubbles; void Start() { StartCoroutine(Init()); // 冒泡排序 // Sort(); // Print(numbers); // numCoroutine = StartCoroutine(CoroutinePrint(numbers)); // numEnumerator = numbers.</description>
+      <description>冒泡排序的简单可视化，利用协程对冒泡排序进行分步骤执行；
+using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI; public class BubbleSort : MonoBehaviour { // info public Text info; public Text statistics; public Button startbutton; // 可选开关 public bool IsManully = false; [SerializeReference] public int[] numbers = new int[10]; public bool isRandomNum = false; public int RandomMin = -9; public int RandomMax = 9; // 协程 Coroutine numCoroutine; // 递归 IEnumerator numEnumerator; Coroutine coroutineSort; Coroutine coroutineObj; // 动画事件 public delegate void SwitchEvent(int first, int last); public static SwitchEvent switchEvent; // 展示层 public GameObject BubblePrefab; public GameObject[] Bubbles; void Start() { StartCoroutine(Init()); // 冒泡排序 // Sort(); // Print(numbers); // numCoroutine = StartCoroutine(CoroutinePrint(numbers)); // numEnumerator = numbers.</description>
     </item>
     
     <item>
@@ -35,6 +36,19 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
       
       <guid>https://yathenstianbase.github.io/contact/</guid>
       <description>Feel free to contact with me : Stianbase@foxmail.com</description>
+    </item>
+    
+    <item>
+      <title>FactoryMethod Pattern [工厂方法]</title>
+      <link>https://yathenstianbase.github.io/posts/factorymethod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/factorymethod/</guid>
+      <description>工厂方法 设计模式 工厂方法属于构建类型的设计模式; 在最终调用时候，接受返回值的类型往往申明为一个接口类，也代表这种模式有公共的产品接口，可以通过不同的子类分别实现；
+一般工厂方法包含如下部分:
+Product [产品类，一般申明为公共接口类型] ConcreteProduct [具体产品类，继承Product的具体实现] Creator [工厂类，一般申明为抽象类,包含抽象的创建方法] ConcreteCreator [具体工厂类,继承Creator的具体实现] 例 Product 产品类
+public interface IVehicle { void move(); } public interface IPhone { void dialog(); } ConcreteProduct 具体产品类
+public class Car : IVehicle { public void move() { Debug.Log(&amp;#34;Car -- move&amp;#34;); } } public class Ship : IVehicle { public void move() { Debug.Log(&amp;#34;Ship -- move&amp;#34;); } } public class TelePhone : IPhone { public void dialog() { Debug.</description>
     </item>
     
     <item>
@@ -55,6 +69,19 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
       <guid>https://yathenstianbase.github.io/posts/stencilbuffer/</guid>
       <description>光线步进Code：
 Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#34;Texture&amp;#34;, 2D) = &amp;#34;white&amp;#34; {} _CameraPos(&amp;#34;CameraPos&amp;#34;, vector) = (0.,3,0.) _CubeSize(&amp;#34;CubeSize&amp;#34;, vector) = (0.5,0.5,0.5,1) _CubePos(&amp;#34;CubePos&amp;#34;, vector) = (0,0.5,4,0) _CubeRotSpeed(&amp;#34;CubeRotSpeed&amp;#34;, float) = 0 _CubeScale(&amp;#34;CubeScale&amp;#34;, float) = 1 _CubeMirroOpt(&amp;#34;CubeMirroOpt&amp;#34;,vector) = (0,0,0,0) _CubeScaleOpt(&amp;#34;CubeScaleOpt&amp;#34;,vector) = (0,0,0,0) _CubeRotOpt(&amp;#34;CubeRotOpt&amp;#34;,vector) = (0,0,0,0) _DirectLightPos(&amp;#34;DirectLightPos&amp;#34;,vector) = (0,5,6) _MainColor(&amp;#34;MainColor&amp;#34;,Color) = (0.25, 0.65, 0.99,0.00) // stencil _StencilReferenceID(&amp;#34;Stencil ID Reference&amp;#34;, Float) = 1 [Enum(UnityEngine.Rendering.CompareFunction)] _StencilComp(&amp;#34;Stencil Comparison&amp;#34;, Float) = 3 [Enum(UnityEngine.Rendering.StencilOp)] _StencilOp(&amp;#34;Stencil Operation&amp;#34;, Float) = 0 _StencilWriteMask(&amp;#34;Stencil Write Mask&amp;#34;, Float) = 255 _StencilReadMask(&amp;#34;Stencil Read Mask&amp;#34;, Float) = 255 } SubShader { Tags { &amp;#34;Queue&amp;#34;	= &amp;#34;Geometry&amp;#34; &amp;#34;RenderType&amp;#34; = &amp;#34;StencilOpaque&amp;#34; } Stencil { Ref[_StencilReferenceID] Comp[_StencilComp] Pass[_StencilOp]	// keep ReadMask[_StencilReadMask] WriteMask[_StencilWriteMask] } Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #include &amp;#34;UnityCG.</description>
+    </item>
+    
+    <item>
+      <title>TemplateMethod Pattern [模板方法]</title>
+      <link>https://yathenstianbase.github.io/posts/templatemethod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/templatemethod/</guid>
+      <description>模板方法 设计模式 利用面向对象编程语言的多态性,在抽象父类中定义共有的并且不会变化的方法，并可以通过组合方法来实现某种算法，之后利用在子类中实现方法这种&amp;quot;延迟&amp;quot;方式，来实现一种框架，多种实现方式的结构；
+因为定义组合的方式是在抽象父类中，所以会给代码阅读带来一定的不便;
+例 抽象模板
+// 定义抽象类模板 abstract class TreeColorFlag { // 定义方法，但并不实现它们，利用面向对象语言的多态特性，留作子类来按照需要实现； protected abstract void DrawName(); protected abstract void DrawFirstPart(); protected abstract void DrawSecondPart(); protected abstract void DrawThirdPart(); // 将方法组织为某种算法 public void Draw() { DrawName(); DrawFirstPart(); DrawSecondPart(); DrawThirdPart(); } } 继承抽象模板类的子类
+// 继承抽象模板类，实现父类方法; class ArmenianFlag : TreeColorFlag { protected override void DrawName() { Type type = typeof(ArmenianFlag); Debug.Log(type.Name+&amp;#34;\n&amp;#34;); } protected override void DrawFirstPart() { Console.BackgroundColor = ConsoleColor.Red; Debug.Log(new string(&amp;#39;-&amp;#39;, 15)); } protected override void DrawSecondPart() { Console.</description>
     </item>
     
   </channel>
