@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Program on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/categories/program/</link>
+    <description>Recent content in Program on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# Ref type [C#引用类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharpreftype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharpreftype/</guid>
+      <description>1,引用类型定义
+https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types
+引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。
+下列关键字用于声明引用类型：
+class
+interface
+delegate
+record
+内置引用类型
+动态类型; dynamic 类型表示变量的使用和对其成员的引用绕过编译时类型检查。 改为在运行时解析这些操作;
+对象类型; object 类型是 System.Object 在 .NET 中的别名;
+字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名;
+委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化;</description>
+    </item>
+    
+    <item>
+      <title>C# Value type [C#值类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharpvaluetype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharpvaluetype/</guid>
+      <description>1,值类型定义
+https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types#kinds-of-value-types-and-type-constraints
+结构体和类的区别
+值类型的变量包含类型的实例。(应该指的就是实际的数值,而非一个引用地址;在内存处如何描述呢?)
+值类型在继承体系中由ValueType类表示;
+默认情况下，在分配中(应该指的是内存的分配)，通过将实参传递给方法并返回方法结果来复制变量值。 对于值类型变量，会复制相应的类型实例;
+伪代码示例:
+int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); // } print(val); // 第一次打印为 4.14
+// 第二次打印为 3.14
+两次的打印的是两个不同实例的值
+2,值类型的种类 C# 提供以下内置值类型，也称为“简单类型”,所有简单值都是结构类型： 整型数值类型 - .NET类型
+- sbyte System.Sbyte- byte System.Byte- short System.Int16- ushort System.Uint16- int System.Int32- uint System.UInt32- long System.Int64- ulong System.UInt64- nint System.IntPtr- nuint System.UIntPtr浮点型数值类型 - .NET类型
+- float System.</description>
+    </item>
+    
+  </channel>
+</rss>

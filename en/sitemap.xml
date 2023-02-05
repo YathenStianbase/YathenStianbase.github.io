@@ -47,6 +47,10 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/c#/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/posts/csharpreftype/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/csharpvaluetype/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -70,6 +74,8 @@
     <loc>https://yathenstianbase.github.io/posts/factorymethod/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/categories/program/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/projects/</loc>
   </url><url>
