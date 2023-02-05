@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Accessibility Levels in C# [C#可访问级别]</title>
+      <link>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</guid>
+      <description>访问修饰符 public - 全局访问，可跨程序集; private - 只能由包含类访问; protected - 只能由包含类和包含类的继承类访问; internal - 只能由当前程序集访问; sealed - 不属于访问修饰符，表示一个类不可被继承; protected internal - 可被其他程序集中的派生类所访问; namespace Assembly1 { public class Greet { protected internal string msg=&amp;#34;Hello&amp;#34;; } class Program { static void Main(string[] args) { Greet greet = new Greet(); Console.WriteLine(greet.msg); Console.ReadLine(); } } } // access Assembly1 using Assembly1; namespace Assembly2 { // derived class of Greet class Program: Greet { static void Main(string[] args) { Program greet = new Program(); // 此处可以跨程序集访问&amp;#34;protected internal&amp;#34;修饰的变量 msg Console.</description>
+    </item>
+    
+    <item>
       <title>BubbleSort [冒泡排序可视化]</title>
       <link>https://yathenstianbase.github.io/posts/bubblesort-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -56,6 +65,21 @@ int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); /
 2,值类型的种类 C# 提供以下内置值类型，也称为“简单类型”,所有简单值都是结构类型： 整型数值类型 - .NET类型
 - sbyte System.Sbyte- byte System.Byte- short System.Int16- ushort System.Uint16- int System.Int32- uint System.UInt32- long System.Int64- ulong System.UInt64- nint System.IntPtr- nuint System.UIntPtr浮点型数值类型 - .NET类型
 - float System.</description>
+    </item>
+    
+    <item>
+      <title>Command Pattern [命令模式]</title>
+      <link>https://yathenstianbase.github.io/posts/commandpattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/commandpattern/</guid>
+      <description>属于行为类型模式
+将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
+一般包含成员:
+Receiver 命令接收者,命令的执行者; 抽象命令接口, 定义需要执行的方法，并交由子类来实现; 具体命令类,继承抽象命令接口，接受传入的命令接收者对象后，执行它们的行为; 调用命令者,调用传入的命令; Receiver 命令接收者
+public class Receiver { public void Action() { Console.WriteLine(&amp;#34;Called Receiver.Action()&amp;#34;); } } ICommand 抽象命令接口
+public interface ICommand { void Execute(); void Undo(); } abstract class AbstractCommand : ICommand { protected Receiver receiver; public abstract void Execute(); public abstract void Undo(); } 具体命令类
+class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiver receiver) { this.receiver = receiver; } public override void Execute() { receiver.</description>
     </item>
     
     <item>

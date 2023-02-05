@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D3D on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/tags/d3d/</link>
+    <description>Recent content in D3D on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/d3d/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rendering Pipeline [渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/renderingpipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/renderingpipeline/</guid>
+      <description>根据 Introduction to 3D Game Programming with DirectX 一书介绍,渲染流程大致分为以下几个步骤
+Input Assembler (IA) stage [输入装配阶段] 此阶段将读取顶点和索引，并将这些数据组合成突击和图元;
+Vertex Shader (VS) stage [顶点着色器阶段] 此阶段可以自定义编码，在Unity的shader格式中,&amp;quot;#pragma vertex vert&amp;quot;便是代表声明一个顶点着色器函数；
+例如：
+v2f vert(appdata v) { v2f o; o.pos = UnityObjectToClipPos(v.vertex); return o; } Hull Shader (HS) stage
+Tessellator stage
+Domain Shader (DS) stage
+Geometry Shader (GS)
+Rasterizer (RS) stage
+Pixel Shader (PS) stage [像素着色器阶段] 也称为片元着色器,属于可以自定义代码的阶段,处理每一个像素片段的颜色属性;在Unity中可以通过 &amp;ldquo;#pragma fragment frag&amp;quot;申明,
+例如:
+half4 frag(v2f i) : COLOR { return _Color; } Output Merger (OM) stage</description>
+    </item>
+    
+  </channel>
+</rss>

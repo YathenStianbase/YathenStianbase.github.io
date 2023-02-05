@@ -20,6 +20,15 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
     </item>
     
     <item>
+      <title>Accessibility Levels in C# [C#可访问级别]</title>
+      <link>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</guid>
+      <description>访问修饰符 public - 全局访问，可跨程序集; private - 只能由包含类访问; protected - 只能由包含类和包含类的继承类访问; internal - 只能由当前程序集访问; sealed - 不属于访问修饰符，表示一个类不可被继承; protected internal - 可被其他程序集中的派生类所访问; namespace Assembly1 { public class Greet { protected internal string msg=&amp;#34;Hello&amp;#34;; } class Program { static void Main(string[] args) { Greet greet = new Greet(); Console.WriteLine(greet.msg); Console.ReadLine(); } } } // access Assembly1 using Assembly1; namespace Assembly2 { // derived class of Greet class Program: Greet { static void Main(string[] args) { Program greet = new Program(); // 此处可以跨程序集访问&amp;#34;protected internal&amp;#34;修饰的变量 msg Console.</description>
+    </item>
+    
+    <item>
       <title>BubbleSort [冒泡排序可视化]</title>
       <link>https://yathenstianbase.github.io/posts/bubblesort-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -72,6 +81,37 @@ int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); /
     </item>
     
     <item>
+      <title>C&#43;&#43; Native plugin for Unity [Unity C&#43;&#43;原生插件管理]</title>
+      <link>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</guid>
+      <description>相关插件 UnityNativeTool
+Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
+UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
+git clone 源码之后解压到Unity项目的Assets目录下；
+添加空物体，并挂载DllManipulatorScript脚本;
+启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
+Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文件: NativeTest.h 头文件
+#pragma once #include &amp;lt;cstring&amp;gt; extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeStart(); extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeEnd(); //编译器常量 extern &amp;#34;C&amp;#34; __declspec(dllexport) constexpr float ConstexprMethod(); extern &amp;#34;C&amp;#34; __declspec(dllexport) bool ReturnMyType(); class NativeClass { public: int i; float f; double d; char c; char* cp; NativeClass(); ~NativeClass(); }; template&amp;lt;typename MyType&amp;gt; struct my_type_struct { static constexpr bool boolval = false; }; template&amp;lt;typename E&amp;gt; constexpr bool has_flag(E lhs, E rhs) { //return (lhs &amp;amp; rhs) == rhs; return (lhs == rhs); } NativeTest.</description>
+    </item>
+    
+    <item>
+      <title>Command Pattern [命令模式]</title>
+      <link>https://yathenstianbase.github.io/posts/commandpattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/commandpattern/</guid>
+      <description>属于行为类型模式
+将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
+一般包含成员:
+Receiver 命令接收者,命令的执行者; 抽象命令接口, 定义需要执行的方法，并交由子类来实现; 具体命令类,继承抽象命令接口，接受传入的命令接收者对象后，执行它们的行为; 调用命令者,调用传入的命令; Receiver 命令接收者
+public class Receiver { public void Action() { Console.WriteLine(&amp;#34;Called Receiver.Action()&amp;#34;); } } ICommand 抽象命令接口
+public interface ICommand { void Execute(); void Undo(); } abstract class AbstractCommand : ICommand { protected Receiver receiver; public abstract void Execute(); public abstract void Undo(); } 具体命令类
+class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiver receiver) { this.receiver = receiver; } public override void Execute() { receiver.</description>
+    </item>
+    
+    <item>
       <title>Contact</title>
       <link>https://yathenstianbase.github.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -104,6 +144,26 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
     </item>
     
     <item>
+      <title>Rendering Pipeline [渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/renderingpipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/renderingpipeline/</guid>
+      <description>根据 Introduction to 3D Game Programming with DirectX 一书介绍,渲染流程大致分为以下几个步骤
+Input Assembler (IA) stage [输入装配阶段] 此阶段将读取顶点和索引，并将这些数据组合成突击和图元;
+Vertex Shader (VS) stage [顶点着色器阶段] 此阶段可以自定义编码，在Unity的shader格式中,&amp;quot;#pragma vertex vert&amp;quot;便是代表声明一个顶点着色器函数；
+例如：
+v2f vert(appdata v) { v2f o; o.pos = UnityObjectToClipPos(v.vertex); return o; } Hull Shader (HS) stage
+Tessellator stage
+Domain Shader (DS) stage
+Geometry Shader (GS)
+Rasterizer (RS) stage
+Pixel Shader (PS) stage [像素着色器阶段] 也称为片元着色器,属于可以自定义代码的阶段,处理每一个像素片段的颜色属性;在Unity中可以通过 &amp;ldquo;#pragma fragment frag&amp;quot;申明,
+例如:
+half4 frag(v2f i) : COLOR { return _Color; } Output Merger (OM) stage</description>
+    </item>
+    
+    <item>
       <title>Stencil [深度模板] 与 RayMarch[光线步进]</title>
       <link>https://yathenstianbase.github.io/posts/stencilbuffer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -124,6 +184,28 @@ Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#
 例 抽象模板
 // 定义抽象类模板 abstract class TreeColorFlag { // 定义方法，但并不实现它们，利用面向对象语言的多态特性，留作子类来按照需要实现； protected abstract void DrawName(); protected abstract void DrawFirstPart(); protected abstract void DrawSecondPart(); protected abstract void DrawThirdPart(); // 将方法组织为某种算法 public void Draw() { DrawName(); DrawFirstPart(); DrawSecondPart(); DrawThirdPart(); } } 继承抽象模板类的子类
 // 继承抽象模板类，实现父类方法; class ArmenianFlag : TreeColorFlag { protected override void DrawName() { Type type = typeof(ArmenianFlag); Debug.Log(type.Name+&amp;#34;\n&amp;#34;); } protected override void DrawFirstPart() { Console.BackgroundColor = ConsoleColor.Red; Debug.Log(new string(&amp;#39;-&amp;#39;, 15)); } protected override void DrawSecondPart() { Console.</description>
+    </item>
+    
+    <item>
+      <title>Unity Scriptable Render Pipeline [Unity可编程渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</guid>
+      <description>Scriptable Render PipelineLink to headingUnity中SRP管线简化代码构成;
+定义SRP资源文件, 对象包含关系为 RenderPipelineAsset -&amp;gt; RenderPipeline -&amp;gt; CRenderer;
+CSRPA.cs 定义SRP资源类
+[CreateAssetMenu(menuName = &amp;#34;CSRPA&amp;#34;)] public class CSRPA : RenderPipelineAsset { public bool isUseSRPBatching; protected override RenderPipeline CreatePipeline() { return new CSRP(isUseSRPBatching); } } CSRP.cs 定义渲染管线类
+internal class CSRP : RenderPipeline { CRenderer crenderer = new CRenderer(); private bool isUseSRPBatching; public CSRP(bool isUseSRPBatching) { this.isUseSRPBatching = isUseSRPBatching; GraphicsSettings.useScriptableRenderPipelineBatching = isUseSRPBatching; } protected override void Render(ScriptableRenderContext context, Camera[] cameras) { foreach (Camera cam in cameras) { crenderer.</description>
+    </item>
+    
+    <item>
+      <title>Unity shader params [Unity shader 内置参数]</title>
+      <link>https://yathenstianbase.github.io/posts/unity-shader-buildin-params/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity-shader-buildin-params/</guid>
+      <description>不同的光照模型对应不同结构体参数: Diffuse -&amp;gt; SurfaceOutput StandardSpecular -&amp;gt; SurfaceOutputStandardSpecular 结构体中包含的属性： Albedo -&amp;gt; 颜色 Normal -&amp;gt; 切线空间法线 Emission -&amp;gt; 材质发光属性 Alpha -&amp;gt; 透明度 specular -&amp;gt; 高光 Gloss -&amp;gt; 高光强度 Occlusion -&amp;gt; 遮蔽光 Smoothness -&amp;gt; 光滑度 Metallic -&amp;gt; 金属特性 Tag参数: Queue -&amp;gt; 渲染队列（unity默认提供），它们包含如下选项： Background Geometry AlphaTest Transparent[实现玻璃之类] Overlay 将对应的值写入即可； IgnoreProjector -&amp;gt; 布尔值，是否忽略投影； RenderType -&amp;gt; ? TRANSFORM_TEX unity内置宏，自动进行uv偏移和缩放操作; unity_WorldToObject 是一个矩阵，从物体坐标系转化到世界坐标系需要和此矩阵相乘（非等比模型略有不同）; UnityObjectToClipPos 获取物体position; appdata_base 一般常用作数据来源（appdata_full默认内置） v.vertex 获取顶点数据 v.normal 获取顶点法向量 inout 关键字 #pragma 关键字 surface surf Lambert -&amp;gt; surf函数使用SurfaceOutput作为参数； surface surf Standard -&amp;gt; surf函数使用SurfaceOutput作为参数； nolightmap -&amp;gt; 不使用关照贴图； alpha:fade -&amp;gt; 处理transparent效果时候使用； alpha:fade -&amp;gt; 表示根据material中的alpha值对之前渲染像素进行blend，如玻璃的会显示它后面的东西（和zbuffer以及queueu顺序有关） fullforwardshadows -&amp;gt; vertex:vert -&amp;gt; 指示unity寻找一个名为vert()函数执行 tex2D(from, to) UnpackNormal 一般用于获取bumpmap的法向量 saturate() pow() 函数 tex2Dlod() float4(v.</description>
     </item>
     
   </channel>

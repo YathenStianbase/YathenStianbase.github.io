@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Accessibility Levels in C# [C#可访问级别]</title>
+      <link>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</guid>
+      <description>访问修饰符 public - 全局访问，可跨程序集; private - 只能由包含类访问; protected - 只能由包含类和包含类的继承类访问; internal - 只能由当前程序集访问; sealed - 不属于访问修饰符，表示一个类不可被继承; protected internal - 可被其他程序集中的派生类所访问; namespace Assembly1 { public class Greet { protected internal string msg=&amp;#34;Hello&amp;#34;; } class Program { static void Main(string[] args) { Greet greet = new Greet(); Console.WriteLine(greet.msg); Console.ReadLine(); } } } // access Assembly1 using Assembly1; namespace Assembly2 { // derived class of Greet class Program: Greet { static void Main(string[] args) { Program greet = new Program(); // 此处可以跨程序集访问&amp;#34;protected internal&amp;#34;修饰的变量 msg Console.</description>
+    </item>
+    
+    <item>
       <title>C# Ref type [C#引用类型]</title>
       <link>https://yathenstianbase.github.io/posts/csharpreftype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

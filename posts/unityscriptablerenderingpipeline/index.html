@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+  Unity Scriptable Render Pipeline [Unity可编程渲染管线] · Paradoxical
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Yathen Stianbase">
+<meta name="description" content="Unity Scriptable Render Pipeline.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unity Scriptable Render Pipeline [Unity可编程渲染管线]"/>
+<meta name="twitter:description" content="Unity Scriptable Render Pipeline."/>
+
+<meta property="og:title" content="Unity Scriptable Render Pipeline [Unity可编程渲染管线]" />
+<meta property="og:description" content="Unity Scriptable Render Pipeline." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/" /><meta property="article:section" content="posts" />
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Paradoxical
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/pt-br/">🇧🇷</a>
+              </li>
+            
+          
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/">
+              Unity Scriptable Render Pipeline [Unity可编程渲染管线]
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/yathen/">Yathen</a></div>
+
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/graphic/">Graphic</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/shader/">Shader</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="scriptable-render-pipeline">
+  Scriptable Render Pipeline
+  <a class="heading-link" href="#scriptable-render-pipeline">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Unity中SRP管线简化代码构成;</p>
+<ul>
+<li>
+<p>定义SRP资源文件, 对象包含关系为 RenderPipelineAsset -&gt; RenderPipeline -&gt; CRenderer;</p>
+</li>
+<li>
+<p>CSRPA.cs 定义SRP资源类</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>[CreateAssetMenu(menuName = &#34;CSRPA&#34;)]
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CSRPA</span> : RenderPipelineAsset
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="">bool</span> isUseSRPBatching;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">protected</span> <span style="font-weight:bold">override</span> RenderPipeline CreatePipeline()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> CSRP(isUseSRPBatching);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>CSRP.cs 定义渲染管线类</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="font-weight:bold">internal</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CSRP</span> : RenderPipeline
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    CRenderer crenderer = <span style="font-weight:bold">new</span> CRenderer();
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">private</span> <span style="">bool</span> isUseSRPBatching;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> CSRP(<span style="">bool</span> isUseSRPBatching)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">this</span>.isUseSRPBatching = isUseSRPBatching;
+</span></span><span style="display:flex;"><span>        GraphicsSettings.useScriptableRenderPipelineBatching = isUseSRPBatching;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">protected</span> <span style="font-weight:bold">override</span> <span style="font-weight:bold">void</span> Render(ScriptableRenderContext context, Camera[] cameras)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">foreach</span> (Camera cam <span style="font-weight:bold">in</span> cameras)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            crenderer.Rendring(context, cam);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>CRenderer.cs 定义渲染类</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CRenderer</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ScriptableRenderContext context;
+</span></span><span style="display:flex;"><span>    Camera cam;
+</span></span><span style="display:flex;"><span>    CullingResults cullingResults;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">const</span> <span style="">string</span> gcbName = <span style="font-style:italic">&#34;gCbName&#34;</span>;
+</span></span><span style="display:flex;"><span>    CommandBuffer gCb = <span style="font-weight:bold">new</span> CommandBuffer
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        name = gcbName
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">static</span> ShaderTagId unlitShaderTagId = <span style="font-weight:bold">new</span> ShaderTagId(<span style="font-style:italic">&#34;SRPDefaultUnlit&#34;</span>),
+</span></span><span style="display:flex;"><span>    litShaderTagId = <span style="font-weight:bold">new</span> ShaderTagId(<span style="font-style:italic">&#34;Custom&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">void</span> Rendring(ScriptableRenderContext context, Camera cam)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">this</span>.context = context;
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">this</span>.cam = cam;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// cull 参数</span>
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span> (!Cull())
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// 设置参数</span>
+</span></span><span style="display:flex;"><span>        context.SetupCameraProperties(cam);
+</span></span><span style="display:flex;"><span>        gCb.ClearRenderTarget(<span style="font-weight:bold">true</span>, <span style="font-weight:bold">true</span>, cam.backgroundColor);
+</span></span><span style="display:flex;"><span>        context.ExecuteCommandBuffer(gCb);
+</span></span><span style="display:flex;"><span>        gCb.Clear();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// 获取光源</span>
+</span></span><span style="display:flex;"><span>        Light light = cullingResults.visibleLights[0].light;
+</span></span><span style="display:flex;"><span>        Vector3 lightDir = -light.transform.forward;
+</span></span><span style="display:flex;"><span>        Vector4 lightCol = light.color.linear;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="">float</span> lightIntensity = light.intensity;
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// set globlevector</span>
+</span></span><span style="display:flex;"><span>        gCb.SetGlobalVector(<span style="font-style:italic">&#34;lightDir&#34;</span>, lightDir);
+</span></span><span style="display:flex;"><span>        gCb.SetGlobalVector(<span style="font-style:italic">&#34;lightCol&#34;</span>, lightCol);
+</span></span><span style="display:flex;"><span>        gCb.SetGlobalFloat(<span style="font-style:italic">&#34;lightIntensity&#34;</span>, lightIntensity);
+</span></span><span style="display:flex;"><span>        context.ExecuteCommandBuffer(gCb);
+</span></span><span style="display:flex;"><span>        gCb.Clear();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// ---</span>
+</span></span><span style="display:flex;"><span>        SortingSettings sortingSettings = <span style="font-weight:bold">new</span> SortingSettings(cam);
+</span></span><span style="display:flex;"><span>        sortingSettings.criteria = SortingCriteria.CommonOpaque;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="font-style:italic">// 绘制 Geometry</span>
+</span></span><span style="display:flex;"><span>        DrawingSettings drawingSettings = <span style="font-weight:bold">new</span> DrawingSettings
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">// sortingSettings = new SortingSettings(cam)</span>
+</span></span><span style="display:flex;"><span>            sortingSettings = sortingSettings
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        drawingSettings.SetShaderPassName(0, <span style="font-weight:bold">new</span> ShaderTagId(<span style="font-style:italic">&#34;SRPDefaultUnlit&#34;</span>));
+</span></span><span style="display:flex;"><span>        FilteringSettings filteringSettings = FilteringSettings.defaultValue;
+</span></span><span style="display:flex;"><span>        filteringSettings.renderQueueRange = RenderQueueRange.opaque;
+</span></span><span style="display:flex;"><span>        context.DrawRenderers(cullingResults, <span style="font-weight:bold">ref</span> drawingSettings, <span style="font-weight:bold">ref</span> filteringSettings);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        context.DrawSkybox(cam);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        context.ExecuteCommandBuffer(gCb);
+</span></span><span style="display:flex;"><span>        gCb.Clear();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        context.Submit();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="">bool</span> Cull()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span> (cam.TryGetCullingParameters(<span style="font-weight:bold">out</span> ScriptableCullingParameters p))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="font-style:italic">// p.shadowDistance = 30;</span>
+</span></span><span style="display:flex;"><span>            cullingResults = context.Cull(<span style="font-weight:bold">ref</span> p);
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span> <span style="font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>UnityInput.hlsl 作为库文件</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>#ifndef CUSTOM_COMMON_INCLUDED
+</span></span><span style="display:flex;"><span>#define CUSTOM_COMMON_INCLUDED
+</span></span><span style="display:flex;"><span>// Unity本身包含的一些公共的库提供支持
+</span></span><span style="display:flex;"><span>#include &#34;Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl&#34;
+</span></span><span style="display:flex;"><span>#include &#34;Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 根据 Catlike Coding 文章中描述,此宏内定义一种被称为&#34;uniform value&#34;的变量,GPU在每帧处理顶点着器&gt; 和片元着色器的时候会进行调用;
+</span></span><span style="display:flex;"><span>#ifndef CUSTOM_UNITY_INPUT_INCLUDED
+</span></span><span style="display:flex;"><span>#define CUSTOM_UNITY_INPUT_INCLUDED
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Unity为了平台通用性，提供了CBUFFER_START关键字,可以作为constant buffer的替代;
+</span></span><span style="display:flex;"><span>CBUFFER_START(UnityPerDraw)
+</span></span><span style="display:flex;"><span>float4x4 unity_ObjectToWorld;
+</span></span><span style="display:flex;"><span>float4x4 unity_WorldToObject;
+</span></span><span style="display:flex;"><span>float4 unity_LODFade;
+</span></span><span style="display:flex;"><span>real4 unity_WorldTransformParams;
+</span></span><span style="display:flex;"><span>CBUFFER_END
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>float4x4 unity_MatrixVP;
+</span></span><span style="display:flex;"><span>float4x4 unity_MatrixV;
+</span></span><span style="display:flex;"><span>float4x4 glstate_matrix_projection;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>float3 _WorldSpaceCameraPos;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#endif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// 别名定义，否则编译会失败
+</span></span><span style="display:flex;"><span>#define UNITY_MATRIX_M unity_ObjectToWorld
+</span></span><span style="display:flex;"><span>#define UNITY_MATRIX_I_M unity_WorldToObject
+</span></span><span style="display:flex;"><span>#define UNITY_MATRIX_V unity_MatrixV
+</span></span><span style="display:flex;"><span>#define UNITY_MATRIX_VP unity_MatrixVP
+</span></span><span style="display:flex;"><span>#define UNITY_MATRIX_P glstate_matrix_projection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Unity本身包含的一些公共的库提供支持
+</span></span><span style="display:flex;"><span>#include &#34;Packages/com.unity.render-pipelines.core/ShaderLibrary/UnityInstancing.hlsl&#34;
+</span></span><span style="display:flex;"><span>#include &#34;Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>float Square (float x) {
+</span></span><span style="display:flex;"><span>return x * x;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#endif
+</span></span></code></pre></div></li>
+<li>
+<p>LitPass.hlsl 简单的Lambert关照</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>#ifndef CUSTOM_LIT_PASS_INCLUDED
+</span></span><span style="display:flex;"><span>    #define CUSTOM_LIT_PASS_INCLUDED
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    #include &#34;../_Libs/UnityInput.hlsl&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    float4 _BaseColor;
+</span></span><span style="display:flex;"><span>    TEXTURE2D(_BaseMap);
+</span></span><span style="display:flex;"><span>    SAMPLER(sampler_BaseMap);
+</span></span><span style="display:flex;"><span>    float4 _BaseMap_ST;
+</span></span><span style="display:flex;"><span>    float _Emissive;
+</span></span><span style="display:flex;"><span>    float3 lightDir;
+</span></span><span style="display:flex;"><span>    float3 lightCol;
+</span></span><span style="display:flex;"><span>    float lightIntensity;
+</span></span><span style="display:flex;"><span>    float4 _Specular;
+</span></span><span style="display:flex;"><span>    float _Gloss;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    struct Attributes
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        float3 positionOS : POSITION;
+</span></span><span style="display:flex;"><span>        float3 normalOS : NORMAL;
+</span></span><span style="display:flex;"><span>        float2 baseUV : TEXCOORD0;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    struct v2f
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        float4 positionCS : SV_POSITION;
+</span></span><span style="display:flex;"><span>        float3 positionWS : VAR_POSITION;
+</span></span><span style="display:flex;"><span>        float3 normalWS : VAR_NORMAL;
+</span></span><span style="display:flex;"><span>        float2 baseUV : VAR_BASE_UV;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    v2f LitPassVertex (Attributes input) 
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        v2f output;
+</span></span><span style="display:flex;"><span>        // 使用mul会造成着色没有位移问题，会一直渲染在原点
+</span></span><span style="display:flex;"><span>        // output.positionWS = mul(unity_ObjectToWorld,input.positionOS);
+</span></span><span style="display:flex;"><span>        output.positionWS = TransformObjectToWorld(input.positionOS);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        output.positionCS = TransformWorldToHClip(output.positionWS);
+</span></span><span style="display:flex;"><span>        output.normalWS = mul(unity_ObjectToWorld,input.normalOS);
+</span></span><span style="display:flex;"><span>        output.normalWS = normalize(output.normalWS);
+</span></span><span style="display:flex;"><span>        // uv
+</span></span><span style="display:flex;"><span>        output.baseUV = input.baseUV * _BaseMap_ST.xy * 4 + _BaseMap_ST.zw; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        return output;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    float4 LitPassFragment (v2f input) : SV_TARGET 
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        // for test 
+</span></span><span style="display:flex;"><span>        // lightDir = float3(0.25f,0.5f,0.75f);
+</span></span><span style="display:flex;"><span>        // lightCol = float3(0.25f,0.5f,0.75f);
+</span></span><span style="display:flex;"><span>        // lightIntensity = 1.5;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // 贴图取样
+</span></span><span style="display:flex;"><span>        float4 baseMap = SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,input.baseUV);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // Lambert 模型, 使用 max 或者 saturate
+</span></span><span style="display:flex;"><span>        // float4 diff =  float4(max(0,dot(input.normalWS, lightDir.xyz)) * lightCol,1.0f) * lightIntensity;
+</span></span><span style="display:flex;"><span>        float4 diff =  float4(saturate(dot(input.normalWS, lightDir.xyz)) * lightCol,1.0f) * lightIntensity;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // HalfLambert模型, 使用
+</span></span><span style="display:flex;"><span>        float halflambert = 0.5 * dot(input.normalWS, lightDir.xyz) + 0.5;
+</span></span><span style="display:flex;"><span>        diff = float4(halflambert *lightCol,1.0f) * lightIntensity;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // specular Phong 高光模型
+</span></span><span style="display:flex;"><span>        // 获取世界空间的反射光线
+</span></span><span style="display:flex;"><span>        float3 reflectDir = normalize(reflect(-lightDir, input.normalWS));
+</span></span><span style="display:flex;"><span>        // 获取世界空间中摄影机视线方向
+</span></span><span style="display:flex;"><span>        float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - input.positionWS);
+</span></span><span style="display:flex;"><span>        // 计算高光公式 result = (光照颜色强度 * 高光系数) * (MAX(0,摄影机视角方向 * 反射光) 高斯系数次方)
+</span></span><span style="display:flex;"><span>        float3 specular = (lightCol * _Specular.rgb) * pow(saturate(dot(reflectDir,viewDir)),_Gloss);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // Blinn 高光模型
+</span></span><span style="display:flex;"><span>        float3 halfDir = normalize(lightDir + viewDir);
+</span></span><span style="display:flex;"><span>        specular = (lightCol * _Specular.rgb) * pow(saturate(dot(reflectDir,halfDir)),_Gloss);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        return baseMap * diff * _BaseColor * _Emissive + float4(specular,0);
+</span></span><span style="display:flex;"><span>        // return float4(input.normalWS,1.0) * _BaseColor;
+</span></span><span style="display:flex;"><span>        // return 1.0;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>#endif
+</span></span></code></pre></div></li>
+<li>
+<p>CRPLit.shader shaderlab文件</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Shader &#34;CRP/CRPLit&#34;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Properties
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        _BaseMap(&#34;Texture&#34;, 2D) = &#34;white&#34; {}
+</span></span><span style="display:flex;"><span>        _BaseColor(&#34;Color&#34;, Color) = (0.5, 0.5, 0.5, 1.0)
+</span></span><span style="display:flex;"><span>        _Emissive(&#34;Emissive&#34;, float) = 10
+</span></span><span style="display:flex;"><span>        _Specular (&#34;Specular Color&#34;, Color) = (1,1,1,1) // 高光反射颜色
+</span></span><span style="display:flex;"><span>        _Gloss (&#34;Gloss Rang&#34;, Range(8,256)) = 20 // 高光区域的大小
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    SubShader
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        // Tags { &#34;RenderType&#34;=&#34;Opaque&#34; }
+</span></span><span style="display:flex;"><span>        // LOD 100
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Pass
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            HLSLPROGRAM
+</span></span><span style="display:flex;"><span>            #pragma vertex LitPassVertex
+</span></span><span style="display:flex;"><span>            #pragma fragment LitPassFragment
+</span></span><span style="display:flex;"><span>            #include &#34;LitPass.hlsl&#34;
+</span></span><span style="display:flex;"><span>            ENDHLSL
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<p>Ref:</p>
+<blockquote>
+<p><a href="https://catlikecoding.com/unity/tutorials/custom-srp/custom-render-pipeline/">https://catlikecoding.com/unity/tutorials/custom-srp/custom-render-pipeline/</a></p>
+</blockquote>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2023
+     Yathen Stianbase 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

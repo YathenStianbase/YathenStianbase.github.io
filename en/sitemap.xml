@@ -41,15 +41,27 @@
                 href="https://yathenstianbase.github.io/"
                 />
   </url><url>
+    <loc>https://yathenstianbase.github.io/series/abi/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/about/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/series/application-binary-interface/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/bubblesort-code/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/c#/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/series/c#/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/posts/csharpreftype/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/csharpvaluetype/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/categories/c&#43;&#43;/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/categories/</loc>
     <xhtml:link
@@ -63,7 +75,11 @@
                 href="https://yathenstianbase.github.io/categories/"
                 />
   </url><url>
+    <loc>https://yathenstianbase.github.io/posts/commandpattern/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/contact/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/d3d/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/categories/design-pattern/</loc>
   </url><url>
@@ -73,11 +89,17 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/factorymethod/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/categories/graphic/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/plugin/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/posts/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/categories/program/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/projects/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/renderingpipeline/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/series/</loc>
     <xhtml:link
@@ -112,6 +134,12 @@
     <loc>https://yathenstianbase.github.io/posts/templatemethod/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/unity/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/unity-shader-buildin-params/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/series/unity3d/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/series/unkown/</loc>
   </url><url>

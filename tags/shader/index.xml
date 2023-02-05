@@ -16,5 +16,27 @@
 Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#34;Texture&amp;#34;, 2D) = &amp;#34;white&amp;#34; {} _CameraPos(&amp;#34;CameraPos&amp;#34;, vector) = (0.,3,0.) _CubeSize(&amp;#34;CubeSize&amp;#34;, vector) = (0.5,0.5,0.5,1) _CubePos(&amp;#34;CubePos&amp;#34;, vector) = (0,0.5,4,0) _CubeRotSpeed(&amp;#34;CubeRotSpeed&amp;#34;, float) = 0 _CubeScale(&amp;#34;CubeScale&amp;#34;, float) = 1 _CubeMirroOpt(&amp;#34;CubeMirroOpt&amp;#34;,vector) = (0,0,0,0) _CubeScaleOpt(&amp;#34;CubeScaleOpt&amp;#34;,vector) = (0,0,0,0) _CubeRotOpt(&amp;#34;CubeRotOpt&amp;#34;,vector) = (0,0,0,0) _DirectLightPos(&amp;#34;DirectLightPos&amp;#34;,vector) = (0,5,6) _MainColor(&amp;#34;MainColor&amp;#34;,Color) = (0.25, 0.65, 0.99,0.00) // stencil _StencilReferenceID(&amp;#34;Stencil ID Reference&amp;#34;, Float) = 1 [Enum(UnityEngine.Rendering.CompareFunction)] _StencilComp(&amp;#34;Stencil Comparison&amp;#34;, Float) = 3 [Enum(UnityEngine.Rendering.StencilOp)] _StencilOp(&amp;#34;Stencil Operation&amp;#34;, Float) = 0 _StencilWriteMask(&amp;#34;Stencil Write Mask&amp;#34;, Float) = 255 _StencilReadMask(&amp;#34;Stencil Read Mask&amp;#34;, Float) = 255 } SubShader { Tags { &amp;#34;Queue&amp;#34;	= &amp;#34;Geometry&amp;#34; &amp;#34;RenderType&amp;#34; = &amp;#34;StencilOpaque&amp;#34; } Stencil { Ref[_StencilReferenceID] Comp[_StencilComp] Pass[_StencilOp]	// keep ReadMask[_StencilReadMask] WriteMask[_StencilWriteMask] } Pass { CGPROGRAM #pragma vertex vert #pragma fragment frag #include &amp;#34;UnityCG.</description>
     </item>
     
+    <item>
+      <title>Unity Scriptable Render Pipeline [Unity可编程渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</guid>
+      <description>Scriptable Render PipelineLink to headingUnity中SRP管线简化代码构成;
+定义SRP资源文件, 对象包含关系为 RenderPipelineAsset -&amp;gt; RenderPipeline -&amp;gt; CRenderer;
+CSRPA.cs 定义SRP资源类
+[CreateAssetMenu(menuName = &amp;#34;CSRPA&amp;#34;)] public class CSRPA : RenderPipelineAsset { public bool isUseSRPBatching; protected override RenderPipeline CreatePipeline() { return new CSRP(isUseSRPBatching); } } CSRP.cs 定义渲染管线类
+internal class CSRP : RenderPipeline { CRenderer crenderer = new CRenderer(); private bool isUseSRPBatching; public CSRP(bool isUseSRPBatching) { this.isUseSRPBatching = isUseSRPBatching; GraphicsSettings.useScriptableRenderPipelineBatching = isUseSRPBatching; } protected override void Render(ScriptableRenderContext context, Camera[] cameras) { foreach (Camera cam in cameras) { crenderer.</description>
+    </item>
+    
+    <item>
+      <title>Unity shader params [Unity shader 内置参数]</title>
+      <link>https://yathenstianbase.github.io/posts/unity-shader-buildin-params/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity-shader-buildin-params/</guid>
+      <description>不同的光照模型对应不同结构体参数: Diffuse -&amp;gt; SurfaceOutput StandardSpecular -&amp;gt; SurfaceOutputStandardSpecular 结构体中包含的属性： Albedo -&amp;gt; 颜色 Normal -&amp;gt; 切线空间法线 Emission -&amp;gt; 材质发光属性 Alpha -&amp;gt; 透明度 specular -&amp;gt; 高光 Gloss -&amp;gt; 高光强度 Occlusion -&amp;gt; 遮蔽光 Smoothness -&amp;gt; 光滑度 Metallic -&amp;gt; 金属特性 Tag参数: Queue -&amp;gt; 渲染队列（unity默认提供），它们包含如下选项： Background Geometry AlphaTest Transparent[实现玻璃之类] Overlay 将对应的值写入即可； IgnoreProjector -&amp;gt; 布尔值，是否忽略投影； RenderType -&amp;gt; ? TRANSFORM_TEX unity内置宏，自动进行uv偏移和缩放操作; unity_WorldToObject 是一个矩阵，从物体坐标系转化到世界坐标系需要和此矩阵相乘（非等比模型略有不同）; UnityObjectToClipPos 获取物体position; appdata_base 一般常用作数据来源（appdata_full默认内置） v.vertex 获取顶点数据 v.normal 获取顶点法向量 inout 关键字 #pragma 关键字 surface surf Lambert -&amp;gt; surf函数使用SurfaceOutput作为参数； surface surf Standard -&amp;gt; surf函数使用SurfaceOutput作为参数； nolightmap -&amp;gt; 不使用关照贴图； alpha:fade -&amp;gt; 处理transparent效果时候使用； alpha:fade -&amp;gt; 表示根据material中的alpha值对之前渲染像素进行blend，如玻璃的会显示它后面的东西（和zbuffer以及queueu顺序有关） fullforwardshadows -&amp;gt; vertex:vert -&amp;gt; 指示unity寻找一个名为vert()函数执行 tex2D(from, to) UnpackNormal 一般用于获取bumpmap的法向量 saturate() pow() 函数 tex2Dlod() float4(v.</description>
+    </item>
+    
   </channel>
 </rss>

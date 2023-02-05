@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+  Rendering Pipeline [渲染管线] · Paradoxical
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Yathen Stianbase">
+<meta name="description" content="Rendering Pipeline steps in D3D.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rendering Pipeline [渲染管线]"/>
+<meta name="twitter:description" content="Rendering Pipeline steps in D3D."/>
+
+<meta property="og:title" content="Rendering Pipeline [渲染管线]" />
+<meta property="og:description" content="Rendering Pipeline steps in D3D." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yathenstianbase.github.io/posts/renderingpipeline/" /><meta property="article:section" content="posts" />
+
+
+<meta property="og:see_also" content="https://yathenstianbase.github.io/posts/bubblesort-code/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharpreftype/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharpvaluetype/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/commandpattern/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/factorymethod/" />
+
+
+
+
+
+<link rel="canonical" href="https://yathenstianbase.github.io/posts/renderingpipeline/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Paradoxical
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/pt-br/">🇧🇷</a>
+              </li>
+            
+          
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://yathenstianbase.github.io/posts/renderingpipeline/">
+              Rendering Pipeline [渲染管线]
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/yathen/">Yathen</a></div>
+
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/graphic/">Graphic</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/d3d/">D3D</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>根据 Introduction to 3D Game Programming with DirectX 一书介绍,渲染流程大致分为以下几个步骤</p>
+<ul>
+<li>
+<p>Input Assembler (IA) stage [输入装配阶段]
+此阶段将读取顶点和索引，并将这些数据组合成突击和图元;</p>
+</li>
+<li>
+<p>Vertex Shader (VS) stage [顶点着色器阶段]
+此阶段可以自定义编码，在Unity的shader格式中,&quot;#pragma vertex vert&quot;便是代表声明一个顶点着色器函数；</p>
+<p>例如：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>v2f vert(appdata v)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    v2f o;
+</span></span><span style="display:flex;"><span>    o.pos = UnityObjectToClipPos(v.vertex);
+</span></span><span style="display:flex;"><span>    return o;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Hull Shader (HS) stage</p>
+</li>
+<li>
+<p>Tessellator stage</p>
+</li>
+<li>
+<p>Domain Shader (DS) stage</p>
+</li>
+<li>
+<p>Geometry Shader (GS)</p>
+</li>
+<li>
+<p>Rasterizer (RS) stage</p>
+</li>
+<li>
+<p>Pixel Shader (PS) stage [像素着色器阶段]
+也称为片元着色器,属于可以自定义代码的阶段,处理每一个像素片段的颜色属性;在Unity中可以通过 &ldquo;#pragma fragment frag&quot;申明,</p>
+<p>例如:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>half4 frag(v2f i) : COLOR
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    return _Color;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Output Merger (OM) stage</p>
+</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-unkown">
+        See also in unkown
+        <a class="heading-link" href="#see-also-in-unkown">
+          <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+            <li>
+              <a href="/posts/bubblesort-code/">BubbleSort [冒泡排序可视化]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/csharpreftype/">C# Ref type [C#引用类型]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/csharpvaluetype/">C# Value type [C#值类型]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/commandpattern/">Command Pattern [命令模式]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/factorymethod/">FactoryMethod Pattern [工厂方法]</a>
+            </li>
+          
+        
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2023
+     Yathen Stianbase 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

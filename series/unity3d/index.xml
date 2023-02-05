@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity3D on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/series/unity3d/</link>
+    <description>Recent content in Unity3D on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/series/unity3d/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity Scriptable Render Pipeline [Unity可编程渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</guid>
+      <description>Scriptable Render PipelineLink to headingUnity中SRP管线简化代码构成;
+定义SRP资源文件, 对象包含关系为 RenderPipelineAsset -&amp;gt; RenderPipeline -&amp;gt; CRenderer;
+CSRPA.cs 定义SRP资源类
+[CreateAssetMenu(menuName = &amp;#34;CSRPA&amp;#34;)] public class CSRPA : RenderPipelineAsset { public bool isUseSRPBatching; protected override RenderPipeline CreatePipeline() { return new CSRP(isUseSRPBatching); } } CSRP.cs 定义渲染管线类
+internal class CSRP : RenderPipeline { CRenderer crenderer = new CRenderer(); private bool isUseSRPBatching; public CSRP(bool isUseSRPBatching) { this.isUseSRPBatching = isUseSRPBatching; GraphicsSettings.useScriptableRenderPipelineBatching = isUseSRPBatching; } protected override void Render(ScriptableRenderContext context, Camera[] cameras) { foreach (Camera cam in cameras) { crenderer.</description>
+    </item>
+    
+  </channel>
+</rss>
