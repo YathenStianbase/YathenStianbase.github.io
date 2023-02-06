@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Design Pattern on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/series/programming-design-pattern/</link>
+    <description>Recent content in Programming Design Pattern on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/series/programming-design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TemplateMethod Pattern [模板方法]</title>
+      <link>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</guid>
+      <description>模板方法 设计模式 利用面向对象编程语言的多态性,在抽象父类中定义共有的并且不会变化的方法，并可以通过组合方法来实现某种算法，之后利用在子类中实现方法这种&amp;quot;延迟&amp;quot;方式，来实现一种框架，多种实现方式的结构；
+因为定义组合的方式是在抽象父类中，所以会给代码阅读带来一定的不便;
+例 抽象模板
+// 定义抽象类模板 abstract class TreeColorFlag { // 定义方法，但并不实现它们，利用面向对象语言的多态特性，留作子类来按照需要实现； protected abstract void DrawName(); protected abstract void DrawFirstPart(); protected abstract void DrawSecondPart(); protected abstract void DrawThirdPart(); // 将方法组织为某种算法 public void Draw() { DrawName(); DrawFirstPart(); DrawSecondPart(); DrawThirdPart(); } } 继承抽象模板类的子类
+// 继承抽象模板类，实现父类方法; class ArmenianFlag : TreeColorFlag { protected override void DrawName() { Type type = typeof(ArmenianFlag); Debug.Log(type.Name+&amp;#34;\n&amp;#34;); } protected override void DrawFirstPart() { Console.BackgroundColor = ConsoleColor.Red; Debug.Log(new string(&amp;#39;-&amp;#39;, 15)); } protected override void DrawSecondPart() { Console.</description>
+    </item>
+    
+  </channel>
+</rss>

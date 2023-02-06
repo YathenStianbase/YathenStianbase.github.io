@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Program Language on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/series/program-language/</link>
+    <description>Recent content in Program Language on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/series/program-language/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# Ref type [C#引用类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</guid>
+      <description>1,引用类型定义
+https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types
+引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。
+下列关键字用于声明引用类型：
+class
+interface
+delegate
+record
+内置引用类型
+动态类型; dynamic 类型表示变量的使用和对其成员的引用绕过编译时类型检查。 改为在运行时解析这些操作;
+对象类型; object 类型是 System.Object 在 .NET 中的别名;
+字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名;
+委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化;</description>
+    </item>
+    
+  </channel>
+</rss>

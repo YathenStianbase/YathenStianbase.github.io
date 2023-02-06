@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/projects/</link>
+    <description>Recent content in Projects on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>书籍阅读</title>
+      <link>https://yathenstianbase.github.io/projects/books-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/projects/books-reading/</guid>
+      <description> 编程语言
+C++ Primer Plu, [C++作为老牌语言，值得了解]; C# programming guide, [微软推出的面向对象编程语言]; 图形
+Unity 5.x Shaders and Effects Cookbook(2nd), [虽然是基于Unity5老旧版本的入门基础讲解，但是很符合工具书属性，基本上每个知识点都会从&amp;quot;准备&amp;quot;,&amp;ldquo;如何做&amp;rdquo;,&amp;ldquo;工作原理&amp;rdquo;,“扩展”等步骤来进行讲解]; Introduction to 3D Game Programming with DirectX12, [中文版为&amp;quot;DX11龙书中译&amp;quot;，排版甚至优于英文原版]; 设计模式
+Game Programming Patterns, 由 Electronic Arts 工程师编写; Unity3D引擎
+Catlike Coding, [一位荷兰开发者&amp;rsquo;Jasper Flick&amp;rsquo;的个人技术博客,介绍了相当多Unity的技术以及Demo的展示]; 其他
+The Art and Rendering of Remember Me, [GDC上游戏&amp;quot;Remember Me&amp;quot;的渲染技术介绍]; James Gurney-Color and Light | 詹姆斯·格尔尼《色彩与光线》, [了解色彩] 动画师生存手册, [了解传统动画]; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Paradoxical</title>
+    <title>posts on Paradoxical</title>
     <link>https://yathenstianbase.github.io/posts/</link>
-    <description>Recent content in Posts on Paradoxical</description>
+    <description>Recent content in posts on Paradoxical</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Accessibility Levels in C# [C#可访问级别]</title>
-      <link>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</link>
+      <link>https://yathenstianbase.github.io/posts/csharp/accessibility-levels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/csharpaccessibilitylevels/</guid>
+      <guid>https://yathenstianbase.github.io/posts/csharp/accessibility-levels/</guid>
       <description>访问修饰符 public - 全局访问，可跨程序集; private - 只能由包含类访问; protected - 只能由包含类和包含类的继承类访问; internal - 只能由当前程序集访问; sealed - 不属于访问修饰符，表示一个类不可被继承; protected internal - 可被其他程序集中的派生类所访问; namespace Assembly1 { public class Greet { protected internal string msg=&amp;#34;Hello&amp;#34;; } class Program { static void Main(string[] args) { Greet greet = new Greet(); Console.WriteLine(greet.msg); Console.ReadLine(); } } } // access Assembly1 using Assembly1; namespace Assembly2 { // derived class of Greet class Program: Greet { static void Main(string[] args) { Program greet = new Program(); // 此处可以跨程序集访问&amp;#34;protected internal&amp;#34;修饰的变量 msg Console.</description>
     </item>
     
     <item>
       <title>BubbleSort [冒泡排序可视化]</title>
-      <link>https://yathenstianbase.github.io/posts/bubblesort-code/</link>
+      <link>https://yathenstianbase.github.io/posts/dsa/bubblesort-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/bubblesort-code/</guid>
+      <guid>https://yathenstianbase.github.io/posts/dsa/bubblesort-code/</guid>
       <description>冒泡排序的简单可视化，利用协程对冒泡排序进行分步骤执行；
 using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI; public class BubbleSort : MonoBehaviour { // info public Text info; public Text statistics; public Button startbutton; // 可选开关 public bool IsManully = false; [SerializeReference] public int[] numbers = new int[10]; public bool isRandomNum = false; public int RandomMin = -9; public int RandomMax = 9; // 协程 Coroutine numCoroutine; // 递归 IEnumerator numEnumerator; Coroutine coroutineSort; Coroutine coroutineObj; // 动画事件 public delegate void SwitchEvent(int first, int last); public static SwitchEvent switchEvent; // 展示层 public GameObject BubblePrefab; public GameObject[] Bubbles; void Start() { StartCoroutine(Init()); // 冒泡排序 // Sort(); // Print(numbers); // numCoroutine = StartCoroutine(CoroutinePrint(numbers)); // numEnumerator = numbers.</description>
     </item>
     
     <item>
       <title>C# Ref type [C#引用类型]</title>
-      <link>https://yathenstianbase.github.io/posts/csharpreftype/</link>
+      <link>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/csharpreftype/</guid>
+      <guid>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</guid>
       <description>1,引用类型定义
 https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types
 引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。
@@ -48,10 +48,10 @@ record
     
     <item>
       <title>C# Value type [C#值类型]</title>
-      <link>https://yathenstianbase.github.io/posts/csharpvaluetype/</link>
+      <link>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/csharpvaluetype/</guid>
+      <guid>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</guid>
       <description>1,值类型定义
 https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types#kinds-of-value-types-and-type-constraints
 结构体和类的区别
@@ -85,10 +85,10 @@ Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文�
     
     <item>
       <title>Command Pattern [命令模式]</title>
-      <link>https://yathenstianbase.github.io/posts/commandpattern/</link>
+      <link>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/commandpattern/</guid>
+      <guid>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</guid>
       <description>属于行为类型模式
 将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
 一般包含成员:
@@ -100,10 +100,10 @@ class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiv
     
     <item>
       <title>FactoryMethod Pattern [工厂方法]</title>
-      <link>https://yathenstianbase.github.io/posts/factorymethod/</link>
+      <link>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/factorymethod/</guid>
+      <guid>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</guid>
       <description>工厂方法 设计模式 工厂方法属于构建类型的设计模式; 在最终调用时候，接受返回值的类型往往申明为一个接口类，也代表这种模式有公共的产品接口，可以通过不同的子类分别实现；
 一般工厂方法包含如下部分:
 Product [产品类，一般申明为公共接口类型] ConcreteProduct [具体产品类，继承Product的具体实现] Creator [工厂类，一般申明为抽象类,包含抽象的创建方法] ConcreteCreator [具体工厂类,继承Creator的具体实现] 例 Product 产品类
@@ -143,10 +143,10 @@ Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#
     
     <item>
       <title>TemplateMethod Pattern [模板方法]</title>
-      <link>https://yathenstianbase.github.io/posts/templatemethod/</link>
+      <link>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/templatemethod/</guid>
+      <guid>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</guid>
       <description>模板方法 设计模式 利用面向对象编程语言的多态性,在抽象父类中定义共有的并且不会变化的方法，并可以通过组合方法来实现某种算法，之后利用在子类中实现方法这种&amp;quot;延迟&amp;quot;方式，来实现一种框架，多种实现方式的结构；
 因为定义组合的方式是在抽象父类中，所以会给代码阅读带来一定的不便;
 例 抽象模板

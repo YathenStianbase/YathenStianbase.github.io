@@ -8,10 +8,10 @@
     <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/design-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Command Pattern [命令模式]</title>
-      <link>https://yathenstianbase.github.io/posts/commandpattern/</link>
+      <link>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/commandpattern/</guid>
+      <guid>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</guid>
       <description>属于行为类型模式
 将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
 一般包含成员:
@@ -23,10 +23,10 @@ class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiv
     
     <item>
       <title>FactoryMethod Pattern [工厂方法]</title>
-      <link>https://yathenstianbase.github.io/posts/factorymethod/</link>
+      <link>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/factorymethod/</guid>
+      <guid>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</guid>
       <description>工厂方法 设计模式 工厂方法属于构建类型的设计模式; 在最终调用时候，接受返回值的类型往往申明为一个接口类，也代表这种模式有公共的产品接口，可以通过不同的子类分别实现；
 一般工厂方法包含如下部分:
 Product [产品类，一般申明为公共接口类型] ConcreteProduct [具体产品类，继承Product的具体实现] Creator [工厂类，一般申明为抽象类,包含抽象的创建方法] ConcreteCreator [具体工厂类,继承Creator的具体实现] 例 Product 产品类
@@ -36,10 +36,10 @@ public class Car : IVehicle { public void move() { Debug.Log(&amp;#34;Car -- mov
     
     <item>
       <title>TemplateMethod Pattern [模板方法]</title>
-      <link>https://yathenstianbase.github.io/posts/templatemethod/</link>
+      <link>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/templatemethod/</guid>
+      <guid>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</guid>
       <description>模板方法 设计模式 利用面向对象编程语言的多态性,在抽象父类中定义共有的并且不会变化的方法，并可以通过组合方法来实现某种算法，之后利用在子类中实现方法这种&amp;quot;延迟&amp;quot;方式，来实现一种框架，多种实现方式的结构；
 因为定义组合的方式是在抽象父类中，所以会给代码阅读带来一定的不便;
 例 抽象模板
