@@ -17,55 +17,6 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
     </item>
     
     <item>
-      <title>C# Value type [C#值类型]</title>
-      <link>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</guid>
-      <description>1,值类型定义
-https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types#kinds-of-value-types-and-type-constraints
-结构体和类的区别
-值类型的变量包含类型的实例。(应该指的就是实际的数值,而非一个引用地址;在内存处如何描述呢?)
-值类型在继承体系中由ValueType类表示;
-默认情况下，在分配中(应该指的是内存的分配)，通过将实参传递给方法并返回方法结果来复制变量值。 对于值类型变量，会复制相应的类型实例;
-伪代码示例:
-int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); // } print(val); // 第一次打印为 4.14
-// 第二次打印为 3.14
-两次的打印的是两个不同实例的值
-2,值类型的种类 C# 提供以下内置值类型，也称为“简单类型”,所有简单值都是结构类型： 整型数值类型 - .NET类型
-- sbyte System.Sbyte- byte System.Byte- short System.Int16- ushort System.Uint16- int System.Int32- uint System.UInt32- long System.Int64- ulong System.UInt64- nint System.IntPtr- nuint System.UIntPtr浮点型数值类型 - .NET类型
-- float System.</description>
-    </item>
-    
-    <item>
-      <title>Command Pattern [命令模式]</title>
-      <link>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</guid>
-      <description>属于行为类型模式
-将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
-一般包含成员:
-Receiver 命令接收者,命令的执行者; 抽象命令接口, 定义需要执行的方法，并交由子类来实现; 具体命令类,继承抽象命令接口，接受传入的命令接收者对象后，执行它们的行为; 调用命令者,调用传入的命令; Receiver 命令接收者
-public class Receiver { public void Action() { Console.WriteLine(&amp;#34;Called Receiver.Action()&amp;#34;); } } ICommand 抽象命令接口
-public interface ICommand { void Execute(); void Undo(); } abstract class AbstractCommand : ICommand { protected Receiver receiver; public abstract void Execute(); public abstract void Undo(); } 具体命令类
-class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiver receiver) { this.receiver = receiver; } public override void Execute() { receiver.</description>
-    </item>
-    
-    <item>
-      <title>FactoryMethod Pattern [工厂方法]</title>
-      <link>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</guid>
-      <description>工厂方法 设计模式 工厂方法属于构建类型的设计模式; 在最终调用时候，接受返回值的类型往往申明为一个接口类，也代表这种模式有公共的产品接口，可以通过不同的子类分别实现；
-一般工厂方法包含如下部分:
-Product [产品类，一般申明为公共接口类型] ConcreteProduct [具体产品类，继承Product的具体实现] Creator [工厂类，一般申明为抽象类,包含抽象的创建方法] ConcreteCreator [具体工厂类,继承Creator的具体实现] 例 Product 产品类
-public interface IVehicle { void move(); } public interface IPhone { void dialog(); } ConcreteProduct 具体产品类
-public class Car : IVehicle { public void move() { Debug.Log(&amp;#34;Car -- move&amp;#34;); } } public class Ship : IVehicle { public void move() { Debug.Log(&amp;#34;Ship -- move&amp;#34;); } } public class TelePhone : IPhone { public void dialog() { Debug.</description>
-    </item>
-    
-    <item>
       <title>Rendering Pipeline [渲染管线]</title>
       <link>https://yathenstianbase.github.io/posts/renderingpipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

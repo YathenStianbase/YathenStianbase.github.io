@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/series/program-language/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Accessibility Levels in C# [C#可访问级别]</title>
+      <link>https://yathenstianbase.github.io/posts/csharp/accessibility-levels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharp/accessibility-levels/</guid>
+      <description>访问修饰符 public - 全局访问，可跨程序集; private - 只能由包含类访问; protected - 只能由包含类和包含类的继承类访问; internal - 只能由当前程序集访问; sealed - 不属于访问修饰符，表示一个类不可被继承; protected internal - 可被其他程序集中的派生类所访问; namespace Assembly1 { public class Greet { protected internal string msg=&amp;#34;Hello&amp;#34;; } class Program { static void Main(string[] args) { Greet greet = new Greet(); Console.WriteLine(greet.msg); Console.ReadLine(); } } } // access Assembly1 using Assembly1; namespace Assembly2 { // derived class of Greet class Program: Greet { static void Main(string[] args) { Program greet = new Program(); // 此处可以跨程序集访问&amp;#34;protected internal&amp;#34;修饰的变量 msg Console.</description>
+    </item>
+    
+    <item>
       <title>C# Ref type [C#引用类型]</title>
       <link>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -25,6 +34,97 @@ record
 对象类型; object 类型是 System.Object 在 .NET 中的别名;
 字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名;
 委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化;</description>
+    </item>
+    
+    <item>
+      <title>C# Value type [C#值类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</guid>
+      <description>1,值类型定义
+https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types#kinds-of-value-types-and-type-constraints
+结构体和类的区别
+值类型的变量包含类型的实例。(应该指的就是实际的数值,而非一个引用地址;在内存处如何描述呢?)
+值类型在继承体系中由ValueType类表示;
+默认情况下，在分配中(应该指的是内存的分配)，通过将实参传递给方法并返回方法结果来复制变量值。 对于值类型变量，会复制相应的类型实例;
+伪代码示例:
+int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); // } print(val); // 第一次打印为 4.14
+// 第二次打印为 3.14
+两次的打印的是两个不同实例的值
+2,值类型的种类 C# 提供以下内置值类型，也称为“简单类型”,所有简单值都是结构类型： 整型数值类型 - .NET类型
+- sbyte System.Sbyte- byte System.Byte- short System.Int16- ushort System.Uint16- int System.Int32- uint System.UInt32- long System.Int64- ulong System.UInt64- nint System.IntPtr- nuint System.UIntPtr浮点型数值类型 - .NET类型
+- float System.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Native plugin for Unity [Unity C&#43;&#43;原生插件管理]</title>
+      <link>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</guid>
+      <description>相关插件 UnityNativeTool
+Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
+UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
+git clone 源码之后解压到Unity项目的Assets目录下；
+添加空物体，并挂载DllManipulatorScript脚本;
+启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
+Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文件: NativeTest.h 头文件
+#pragma once #include &amp;lt;cstring&amp;gt; extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeStart(); extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeEnd(); //编译器常量 extern &amp;#34;C&amp;#34; __declspec(dllexport) constexpr float ConstexprMethod(); extern &amp;#34;C&amp;#34; __declspec(dllexport) bool ReturnMyType(); class NativeClass { public: int i; float f; double d; char c; char* cp; NativeClass(); ~NativeClass(); }; template&amp;lt;typename MyType&amp;gt; struct my_type_struct { static constexpr bool boolval = false; }; template&amp;lt;typename E&amp;gt; constexpr bool has_flag(E lhs, E rhs) { //return (lhs &amp;amp; rhs) == rhs; return (lhs == rhs); } NativeTest.</description>
+    </item>
+    
+    <item>
+      <title>Command Pattern [命令模式]</title>
+      <link>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</guid>
+      <description>属于行为类型模式
+将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
+一般包含成员:
+Receiver 命令接收者,命令的执行者; 抽象命令接口, 定义需要执行的方法，并交由子类来实现; 具体命令类,继承抽象命令接口，接受传入的命令接收者对象后，执行它们的行为; 调用命令者,调用传入的命令; Receiver 命令接收者
+public class Receiver { public void Action() { Console.WriteLine(&amp;#34;Called Receiver.Action()&amp;#34;); } } ICommand 抽象命令接口
+public interface ICommand { void Execute(); void Undo(); } abstract class AbstractCommand : ICommand { protected Receiver receiver; public abstract void Execute(); public abstract void Undo(); } 具体命令类
+class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiver receiver) { this.receiver = receiver; } public override void Execute() { receiver.</description>
+    </item>
+    
+    <item>
+      <title>FactoryMethod Pattern [工厂方法]</title>
+      <link>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</guid>
+      <description>工厂方法 设计模式 工厂方法属于构建类型的设计模式; 在最终调用时候，接受返回值的类型往往申明为一个接口类，也代表这种模式有公共的产品接口，可以通过不同的子类分别实现；
+一般工厂方法包含如下部分:
+Product [产品类，一般申明为公共接口类型] ConcreteProduct [具体产品类，继承Product的具体实现] Creator [工厂类，一般申明为抽象类,包含抽象的创建方法] ConcreteCreator [具体工厂类,继承Creator的具体实现] 例 Product 产品类
+public interface IVehicle { void move(); } public interface IPhone { void dialog(); } ConcreteProduct 具体产品类
+public class Car : IVehicle { public void move() { Debug.Log(&amp;#34;Car -- move&amp;#34;); } } public class Ship : IVehicle { public void move() { Debug.Log(&amp;#34;Ship -- move&amp;#34;); } } public class TelePhone : IPhone { public void dialog() { Debug.</description>
+    </item>
+    
+    <item>
+      <title>Lua Variables [Lua之变量]</title>
+      <link>https://yathenstianbase.github.io/posts/lua/lua-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/lua/lua-variables/</guid>
+      <description>Lua为动态类型语言,变量不要类型定义,只需要为变量赋值;
+基本类型
+nil boolean number // 双精度类型的实浮点数； string // 字符串类型； function // 由 C 或 Lua 编写的函数； userdata // 与C语言的struct类似，可用于和C语言做交互； thread // lua提供的线程类，但是更接近协程； table // Lua 中的表（table）其实是一个&amp;quot;关联数组&amp;quot;（associative arrays），数组的索引可以是数字、字符串或表类型。在 Lua 里，table 的创建是通过&amp;quot;构造表达式&amp;quot;来完成，最简单构造表达式是{}，用来创建一个空表。 声明一个Lua变量,默认值为nil;
+A= -- 不赋值,默认为nil print(A) -- 显示nil类型 print(type(A)) -- 显示nil类型 print(nil) -- 显示nil类型 print(type(nil)) -- 显示nil类型 声明boolean类型
+T=true F=false print(type(T)) -- 显示boolean类型 print(type(F)) -- 显示boolean类型 if(not(nil)) then print(&amp;#39;nil is false&amp;#39;) -- 显示此行，nil在if表达式中相当于false else print(&amp;#39;nil is true&amp;#39;) end if(0) then print(&amp;#39;0 is true&amp;#39;) -- 显示此行，数字0在if表达式中相当于true else print(&amp;#39;nil is false&amp;#39;) end 声明number类型</description>
+    </item>
+    
+    <item>
+      <title>TemplateMethod Pattern [模板方法]</title>
+      <link>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/designpattern/templatemethod-pattern/</guid>
+      <description>模板方法 设计模式 利用面向对象编程语言的多态性,在抽象父类中定义共有的并且不会变化的方法，并可以通过组合方法来实现某种算法，之后利用在子类中实现方法这种&amp;quot;延迟&amp;quot;方式，来实现一种框架，多种实现方式的结构；
+因为定义组合的方式是在抽象父类中，所以会给代码阅读带来一定的不便;
+例 抽象模板
+// 定义抽象类模板 abstract class TreeColorFlag { // 定义方法，但并不实现它们，利用面向对象语言的多态特性，留作子类来按照需要实现； protected abstract void DrawName(); protected abstract void DrawFirstPart(); protected abstract void DrawSecondPart(); protected abstract void DrawThirdPart(); // 将方法组织为某种算法 public void Draw() { DrawName(); DrawFirstPart(); DrawSecondPart(); DrawThirdPart(); } } 继承抽象模板类的子类
+// 继承抽象模板类，实现父类方法; class ArmenianFlag : TreeColorFlag { protected override void DrawName() { Type type = typeof(ArmenianFlag); Debug.Log(type.Name+&amp;#34;\n&amp;#34;); } protected override void DrawFirstPart() { Console.BackgroundColor = ConsoleColor.Red; Debug.Log(new string(&amp;#39;-&amp;#39;, 15)); } protected override void DrawSecondPart() { Console.</description>
     </item>
     
   </channel>

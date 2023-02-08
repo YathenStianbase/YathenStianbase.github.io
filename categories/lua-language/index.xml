@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua Language on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/categories/lua-language/</link>
+    <description>Recent content in Lua Language on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/lua-language/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lua Variables [Lua之变量]</title>
+      <link>https://yathenstianbase.github.io/posts/lua/lua-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/lua/lua-variables/</guid>
+      <description>Lua为动态类型语言,变量不要类型定义,只需要为变量赋值;
+基本类型
+nil boolean number // 双精度类型的实浮点数； string // 字符串类型； function // 由 C 或 Lua 编写的函数； userdata // 与C语言的struct类似，可用于和C语言做交互； thread // lua提供的线程类，但是更接近协程； table // Lua 中的表（table）其实是一个&amp;quot;关联数组&amp;quot;（associative arrays），数组的索引可以是数字、字符串或表类型。在 Lua 里，table 的创建是通过&amp;quot;构造表达式&amp;quot;来完成，最简单构造表达式是{}，用来创建一个空表。 声明一个Lua变量,默认值为nil;
+A= -- 不赋值,默认为nil print(A) -- 显示nil类型 print(type(A)) -- 显示nil类型 print(nil) -- 显示nil类型 print(type(nil)) -- 显示nil类型 声明boolean类型
+T=true F=false print(type(T)) -- 显示boolean类型 print(type(F)) -- 显示boolean类型 if(not(nil)) then print(&amp;#39;nil is false&amp;#39;) -- 显示此行，nil在if表达式中相当于false else print(&amp;#39;nil is true&amp;#39;) end if(0) then print(&amp;#39;0 is true&amp;#39;) -- 显示此行，数字0在if表达式中相当于true else print(&amp;#39;nil is false&amp;#39;) end 声明number类型</description>
+    </item>
+    
+  </channel>
+</rss>
