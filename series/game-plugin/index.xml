@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game Plugin on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/series/game-plugin/</link>
+    <description>Recent content in Game Plugin on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/series/game-plugin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity plugin - A Pathfinding Project Pro</title>
+      <link>https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/</guid>
+      <description>相关插件 A* pathfinding project pro
+实现在Unity上的AStarPathfinding寻路的插件，提供了高级的寻路AI系统;
+新建空物体命名为&amp;quot;A*&amp;quot;，并添加pathfinder组件脚本; 添加Graph，选择第一种类型Grid Graph; )
+Shap &amp;ndash; 寻路网格类型
+width 和 depth &amp;ndash; 表示寻路网格面积区域;
+Node size &amp;ndash; 单个寻路网格单位尺寸
+Height testing
+ray length &amp;ndash; 从上自下的发射检测射线，以此来确定此网格单位表面是否可寻址区域; 通过移动来对比出经过射线检测后寻路网格区域: Collision Testing
+Obstacle Layer Mask &amp;ndash; 添加障碍物层，属于此层的物体将不会在其表面生成寻路网格: 添加寻路AI，可以从示例场景中拷贝bot对象; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -69,10 +69,10 @@ int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); /
     
     <item>
       <title>C&#43;&#43; Native plugin for Unity [Unity C&#43;&#43;原生插件管理]</title>
-      <link>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</link>
+      <link>https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</guid>
+      <guid>https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/</guid>
       <description>相关插件 UnityNativeTool
 Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
 UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
@@ -165,6 +165,23 @@ Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#
 例 抽象模板
 // 定义抽象类模板 abstract class TreeColorFlag { // 定义方法，但并不实现它们，利用面向对象语言的多态特性，留作子类来按照需要实现； protected abstract void DrawName(); protected abstract void DrawFirstPart(); protected abstract void DrawSecondPart(); protected abstract void DrawThirdPart(); // 将方法组织为某种算法 public void Draw() { DrawName(); DrawFirstPart(); DrawSecondPart(); DrawThirdPart(); } } 继承抽象模板类的子类
 // 继承抽象模板类，实现父类方法; class ArmenianFlag : TreeColorFlag { protected override void DrawName() { Type type = typeof(ArmenianFlag); Debug.Log(type.Name+&amp;#34;\n&amp;#34;); } protected override void DrawFirstPart() { Console.BackgroundColor = ConsoleColor.Red; Debug.Log(new string(&amp;#39;-&amp;#39;, 15)); } protected override void DrawSecondPart() { Console.</description>
+    </item>
+    
+    <item>
+      <title>Unity plugin - A Pathfinding Project Pro</title>
+      <link>https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/</guid>
+      <description>相关插件 A* pathfinding project pro
+实现在Unity上的AStarPathfinding寻路的插件，提供了高级的寻路AI系统;
+新建空物体命名为&amp;quot;A*&amp;quot;，并添加pathfinder组件脚本; 添加Graph，选择第一种类型Grid Graph; )
+Shap &amp;ndash; 寻路网格类型
+width 和 depth &amp;ndash; 表示寻路网格面积区域;
+Node size &amp;ndash; 单个寻路网格单位尺寸
+Height testing
+ray length &amp;ndash; 从上自下的发射检测射线，以此来确定此网格单位表面是否可寻址区域; 通过移动来对比出经过射线检测后寻路网格区域: Collision Testing
+Obstacle Layer Mask &amp;ndash; 添加障碍物层，属于此层的物体将不会在其表面生成寻路网格: 添加寻路AI，可以从示例场景中拷贝bot对象; </description>
     </item>
     
     <item>

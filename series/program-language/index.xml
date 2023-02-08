@@ -59,10 +59,10 @@ int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); /
     
     <item>
       <title>C&#43;&#43; Native plugin for Unity [Unity C&#43;&#43;原生插件管理]</title>
-      <link>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</link>
+      <link>https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/c&#43;&#43;nativeforunity/</guid>
+      <guid>https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/</guid>
       <description>相关插件 UnityNativeTool
 Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
 UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
