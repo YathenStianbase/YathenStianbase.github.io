@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android Develope on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/series/android-develope/</link>
+    <description>Recent content in Android Develope on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/series/android-develope/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AndroidSDK sdkmanager [sdkmanager 命令工具]</title>
+      <link>https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/</guid>
+      <description>在cmd窗口中设置临时javahome路径：
+set JAVA_HOME=WindowsPath sdkmanager工具路径 .\android-sdk-windows\tools\bin 帮助命令：
+sdkmanager &amp;ndash;help // 查看命令帮助 下载地址(将https改为http,将dl-ssl改为dl) http://dl-ssl.google.com/android/repository/tools_r25.2.5-windows.zip
+新建&amp;quot;SDK_ROOT&amp;quot;目录, cd SDK_ROOT\tools\bin
+sdkmanager &amp;ndash;list 列出所有版本
+sdkmanager &amp;ldquo;platform-tools&amp;rdquo; 生成包含相关工具的platform-tools目录
+sdkmanager &amp;ldquo;platforms;android-25&amp;rdquo; 生成包含相关工具的platforms目录
+sdkmanager &amp;ldquo;build-tools;25.0.0&amp;rdquo; 生成包含相关工具的build-tools目录
+如果报一下错误， 确保jdk版本对应android sdk版本：
+Exception in thread &amp;#34;main&amp;#34; java.lang.UnsupportedClassVersionError: com/android/sdklib/tool/SdkManagerCli : Unsupported m ajor.minor version 52.0 at java.lang.ClassLoader.defineClass1(Native Method) at java.lang.ClassLoader.defineClassCond(ClassLoader.java:632) at java.lang.ClassLoader.defineClass(ClassLoader.java:616) at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141) at java.net.URLClassLoader.defineClass(URLClassLoader.java:283) at java.net.URLClassLoader.access$000(URLClassLoader.java:58) at java.net.URLClassLoader$1.run(URLClassLoader.java:197) at java.security.AccessController.doPrivileged(Native Method) at java.net.URLClassLoader.findClass(URLClassLoader.java:190) at java.lang.ClassLoader.loadClass(ClassLoader.java:307) at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301) at java.lang.ClassLoader.loadClass(ClassLoader.java:248) Could not find the main class: com.</description>
+    </item>
+    
+  </channel>
+</rss>

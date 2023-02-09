@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Video Tool on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/categories/video-tool/</link>
+    <description>Recent content in Video Tool on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/video-tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg Commands [FFmpeg命令]</title>
+      <link>https://yathenstianbase.github.io/posts/ffmpeg-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/ffmpeg-commands/</guid>
+      <description>此工具可以在Github上找到源码:https://github.com/FFmpeg/FFmpeg
+在ffmpeg官网可以下载Windows执行文件:https://ffmpeg.org/download.html
+这里使用的版本是 ffmpeg-4.1-win64-static；
+基本用法
+ffmpeg -i input.mp4 //查看视频信息 ffmpeg -i input.mp4 output.avi //转换格式 视频转为Gif,更改后缀名即可;
+ffmpeg -i input.mp4 output.gif 缩小分辨率(resolution), 参数 &amp;ldquo;-s&amp;rdquo;, 例如缩小为(240x160);
+ffmpeg -i input.mp4 -s 240x160 output.avi 减少帧数,(对于Gif没什么用),参数 &amp;ldquo;-r&amp;rdquo; , 例如减少为(10帧);
+ffmpeg -i input.mp4 -s 240x160 -r 10 output.avi 降低码率,(对于Gif没什么用),参数 &amp;ldquo;-b&amp;rdquo; , 例如设置为512K;
+ffmpeg -i input.mp4 -s 240x160 -r 10 -b 512K output.avi 压缩命令
+//直接压缩 ffmpeg.exe -i input.jpg out.jpg //指定目标大小压缩 ffmpeg.exe -i input.jpg -fs 25K out.jpg //一个拿色板的例子 ffmpeg.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -25,7 +25,7 @@
 <meta property="og:url" content="https://yathenstianbase.github.io/posts/designpattern/command-pattern/" /><meta property="article:section" content="posts" />
 
 
-<meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/accessibility-levels/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/c#-ref-type/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/" />
+<meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/accessibility-levels/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/c#-ref-type/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/unity3d/editor-lifecycle-methods-in-unity/" />
 
 
 
@@ -108,44 +108,26 @@
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
+              <a class="navigation-link" href="/about/">About [关于我]</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">Blog</a>
+              <a class="navigation-link" href="/posts/">Blog [文章]</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/categories/">Categories</a>
+              <a class="navigation-link" href="/categories/">Categories [分类]</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/projects/">Projects</a>
+              <a class="navigation-link" href="/projects/">Projects [项目]</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="/contact/">Contact me</a>
+              <a class="navigation-link" href="/contact/">Contact me [交流]</a>
             </li>
           
         
-        
-          
-          
-          
-            
-              
-                <li class="navigation-item menu-separator">
-                  <span>|</span>
-                </li>
-                
-              
-              <li class="navigation-item">
-                <a href="/pt-br/">🇧🇷</a>
-              </li>
-            
-          
-            
-          
         
       </ul>
     
@@ -212,6 +194,10 @@
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="font-style:italic">&#34;Called Receiver.Action()&#34;</span>);
 </span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">void</span> UndoAction()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="font-style:italic">&#34;Called Receiver.UndoAction()&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
 <li>
@@ -222,7 +208,7 @@
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">void</span> Undo();
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">abstract</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">AbstractCommand</span> : ICommand
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">abstract</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Command</span> : ICommand
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">protected</span> Receiver receiver;
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">abstract</span> <span style="font-weight:bold">void</span> Execute();
@@ -231,7 +217,7 @@
 </span></span></code></pre></div></li>
 <li>
 <p>具体命令类</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">Add</span> : AbstractCommand
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="font-weight:bold">class</span> <span style="font-weight:bold">Add</span> : Command
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="font-style:italic">// 构建函数，传入Receiver</span>
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> Add(Receiver receiver)
@@ -246,6 +232,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">override</span> <span style="font-weight:bold">void</span> Undo()
 </span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        receiver.UndoAction
 </span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="font-style:italic">&#34;Add.Undo()&#34;</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -254,8 +241,8 @@
 <p>Invoker 调用命令者</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Invoker</span>
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    AbstractCommand command;
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">void</span> SetCommand(Command command)
+</span></span><span style="display:flex;"><span>    ICommand command;
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">void</span> SetCommand(ICommand command)
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="font-weight:bold">this</span>.command = command;
 </span></span><span style="display:flex;"><span>    }
@@ -339,7 +326,7 @@
         
           
             <li>
-              <a href="/posts/designpattern/factorymethod-pattern/">FactoryMethod Pattern [工厂方法]</a>
+              <a href="/posts/unity3d/editor-lifecycle-methods-in-unity/">Editor LifeCycle Methods in Unity.</a>
             </li>
           
         
@@ -365,8 +352,6 @@
     <footer class="footer">
   <section class="container">
     ©
-    
-      2019 -
     
     2023
      Yathen Stianbase 

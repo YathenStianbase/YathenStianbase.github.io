@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>time on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/tags/time/</link>
+    <description>Recent content in time on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/time/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time Control In Unity</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/time-control-in-unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/time-control-in-unity/</guid>
+      <description>Unity在C#脚本和Shader脚本中都提供了时间类；
+Unity 提供的时间变量有：
+Time.time Time.deltaTime &amp;ndash; Update()函数中的时间分片，不是固定值； Time.fixedDeltaTime &amp;ndash; FixUpdate()函数中的时间分片，为固定值； Time.timeScale &amp;ndash; 用于确定游戏程序中时间流逝速度；可以利用此变量实现暂停或者加速效果； 搭配Mathf.Lerp()函数使用，可以实现平滑时间过度效果； // 实现类似superhot的时间平缓效果； public bool action; float x = Input.GetAxisRaw(&amp;#34;Horizontal&amp;#34;); float y = Input.GetAxisRaw(&amp;#34;Vertical&amp;#34;); float time = (x != 0 || y != 0) ? 1f : .03f; float lerpTime = (x != 0 || y != 0) ? .05f : .5f; time = action ? 1 : time; lerpTime = action ? .1f : lerpTime; Time.</description>
+    </item>
+    
+  </channel>
+</rss>

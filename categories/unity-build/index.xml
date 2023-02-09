@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity Build on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/categories/unity-build/</link>
+    <description>Recent content in Unity Build on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/unity-build/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build Android apk in Unity [在Unity中进行安卓打包]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/build-android-apk-in-unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/build-android-apk-in-unity/</guid>
+      <description> 在Unity中发布Android包，一般需要以下工具: JDK Android SDK Android NDK &amp;ndash; 原生组件需要 Gradle 以上工具可以使用Unity提供的，也可以自己单独配置; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -16,9 +16,9 @@
 将行为定义为命令类，需要执行命令的对象被作为参数传入命令类中，Invoer可以控制命令的回撤的回做；
 一般包含成员:
 Receiver 命令接收者,命令的执行者; 抽象命令接口, 定义需要执行的方法，并交由子类来实现; 具体命令类,继承抽象命令接口，接受传入的命令接收者对象后，执行它们的行为; 调用命令者,调用传入的命令; Receiver 命令接收者
-public class Receiver { public void Action() { Console.WriteLine(&amp;#34;Called Receiver.Action()&amp;#34;); } } ICommand 抽象命令接口
-public interface ICommand { void Execute(); void Undo(); } abstract class AbstractCommand : ICommand { protected Receiver receiver; public abstract void Execute(); public abstract void Undo(); } 具体命令类
-class Add : AbstractCommand { // 构建函数，传入Receiver public Add(Receiver receiver) { this.receiver = receiver; } public override void Execute() { receiver.</description>
+public class Receiver { public void Action() { Console.WriteLine(&amp;#34;Called Receiver.Action()&amp;#34;); } public void UndoAction() { Console.WriteLine(&amp;#34;Called Receiver.UndoAction()&amp;#34;); } } ICommand 抽象命令接口
+public interface ICommand { void Execute(); void Undo(); } public abstract class Command : ICommand { protected Receiver receiver; public abstract void Execute(); public abstract void Undo(); } 具体命令类
+class Add : Command { // 构建函数，传入Receiver public Add(Receiver receiver) { this.</description>
     </item>
     
     <item>

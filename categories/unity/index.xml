@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/categories/unity/</link>
+    <description>Recent content in Unity on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Editor LifeCycle Methods in Unity.</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/editor-lifecycle-methods-in-unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/editor-lifecycle-methods-in-unity/</guid>
+      <description>使用编辑器类可以自定义inspector和window的界面以及特有函数库；
+需要使用 &amp;ldquo;using UnityEditor;&amp;ldquo;引入；
+类文件需要放入名称为&amp;quot;Editor&amp;quot;的文件目录下，此目录可以在Assets目录下位置创建；
+Edtior类包含的生命周期函数如下：
+public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow&amp;gt;(); } private void OnEnable() { Debug.Log(&amp;#34;当打开界面的时候调用&amp;#34;); } private void OnInspectorUpdate() { Debug.Log(&amp;#34;当属性界面更新时&amp;#34;);//几乎一直在更新 } private void OnHierarchyChange() { Debug.Log(&amp;#34;当场景层次界面发生改变时调用&amp;#34;);//在Hierarchy界面改变（增加、减 少 物体） } private void OnProjectChange() { Debug.Log(&amp;#34;当项目发生更改时调用&amp;#34;);//在Project视图删除、增加文件 } private void OnGUI() { Debug.Log(&amp;#34;当渲染UI的时候调用&amp;#34;); } private void OnFocus() { Debug.Log(&amp;#34;当被聚焦的时候调用&amp;#34;); } private void OnSelectionChange() { Debug.Log(&amp;#34;当选择发生更改时调用&amp;#34;);//选中的可选项（在Project和Hierarchy视图中） } private void OnLostFocus() { Debug.Log(&amp;#34;当失去焦点时调用&amp;#34;); } private void OnDisable() { Debug.Log(&amp;#34;当隐藏的时候调用&amp;#34;); } private void OnDestroy() { Debug.</description>
+    </item>
+    
+    <item>
+      <title>Implement Simple Object Pool in Unity [Unity3d中简单对象池的实现]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/implement-simple-object-pool-in-unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/implement-simple-object-pool-in-unity/</guid>
+      <description>定义接口,规定对象池中必须要有的几个方法,子类以此实现；
+interface IMonsterPool { GameObject Create(GameObject mon); GameObject Get(); void Recycle(GameObject mon); int CurrentCount(); void EmptyAll(); } 定义类,实现上述接口,考虑到要实行单例模式,而且并没有挂载的需要,因此不继承MonoBehaviour；
+public class MonsterPool : IMonsterPool 定义容量的大小,当然可以从配置文件中来进行读取,并且使用了单例模式来获取对象池实例,这肯定不是唯一的办法,对象池的个数可以根据实际来调整,相应的取消单例模式即可; orignalMon为 初始的实例化对象,之后由对象池创建并管理的对象实际上都是此对象的克隆.可以在游戏开始加载时候从Assetbundle中来进行获取或直接Resource方法获取(不过此方法Unity官方似乎不推荐,可能有较大的资源性能等损耗);
+#region protected int _Max = 50; protected int _Min = 0; protected int _DefCap = 5; private static List&amp;lt;GameObject&amp;gt; mons; private static MonsterPool _Instance; public static MonsterPool Instance { get { if (_Instance == null) { _Instance = new MonsterPool(); } return _Instance; } } private GameObject orignalMon; #endregion 构造方法创建对象的容器List,如果有多种不同的对象,也可以使用Dictionary;Init() 方法是传入的是初始对象,也可以说是模板^.</description>
+    </item>
+    
+    <item>
+      <title>Time Control In Unity</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/time-control-in-unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/time-control-in-unity/</guid>
+      <description>Unity在C#脚本和Shader脚本中都提供了时间类；
+Unity 提供的时间变量有：
+Time.time Time.deltaTime &amp;ndash; Update()函数中的时间分片，不是固定值； Time.fixedDeltaTime &amp;ndash; FixUpdate()函数中的时间分片，为固定值； Time.timeScale &amp;ndash; 用于确定游戏程序中时间流逝速度；可以利用此变量实现暂停或者加速效果； 搭配Mathf.Lerp()函数使用，可以实现平滑时间过度效果； // 实现类似superhot的时间平缓效果； public bool action; float x = Input.GetAxisRaw(&amp;#34;Horizontal&amp;#34;); float y = Input.GetAxisRaw(&amp;#34;Vertical&amp;#34;); float time = (x != 0 || y != 0) ? 1f : .03f; float lerpTime = (x != 0 || y != 0) ? .05f : .5f; time = action ? 1 : time; lerpTime = action ? .1f : lerpTime; Time.</description>
+    </item>
+    
+  </channel>
+</rss>
