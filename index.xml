@@ -56,6 +56,15 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
     </item>
     
     <item>
+      <title>Android ADB Tool [ADB工具命令]</title>
+      <link>https://yathenstianbase.github.io/posts/android/android-adb-tool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/android/android-adb-tool/</guid>
+      <description> 命令: 查看帮助： adb --help 查看连接设备： adb devices 开启无线网络连接： adb tcpip port （默认5555） 使用无线网络连接： adb connect ip_address 连接shell： adb -s 指定设备 shell 倒出配置： dumpsys 使用dumpsys 命令查找app启动入口(注意 Activity Resolver Table: 下的 android.intent.action.MAIN: 之后一般包含的就是启动activity); 启动app： am start {包(package)名}/{包名}.{活动(activity)名称} </description>
+    </item>
+    
+    <item>
       <title>AndroidSDK sdkmanager [sdkmanager 命令工具]</title>
       <link>https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -93,45 +102,40 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
     </item>
     
     <item>
-      <title>C# Ref type [C#引用类型]</title>
-      <link>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</link>
+      <title>C# Enum type [C#之枚举类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharp/csharp-enum-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</guid>
-      <description>1,引用类型定义
-https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types
-引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。
-下列关键字用于声明引用类型：
-class
-interface
-delegate
-record
-内置引用类型
-动态类型; dynamic 类型表示变量的使用和对其成员的引用绕过编译时类型检查。 改为在运行时解析这些操作;
-对象类型; object 类型是 System.Object 在 .NET 中的别名;
-字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名;
-委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化;</description>
+      <guid>https://yathenstianbase.github.io/posts/csharp/csharp-enum-type/</guid>
+      <description>枚举属于值类型，有一组一组的常量和整型值(Int32)组成; C#中使用枚举类型，有利于代码的可读性; 声明格式: 根据&amp;quot;Naming rule violation&amp;quot;说明,枚举命名的头需要建议大写,这可以在visualstudio的提示中看到; enum Name : type { key = &amp;lt;value1&amp;gt;, key = &amp;lt;value2&amp;gt;, key = &amp;lt;value3&amp;gt; } 等号左边相当于变量引用,右边为变量值,type表示这个枚举中的数据类型,VS的提示中包括{byte,sbyte,short,ushort,int,uint,long,ulong}; 默认的类型应该为int,并且数值是按照声明顺序从0依次递增; enum Number : int { zero = 0, // 若自定第一顺位的值，则后续值依次增加1 one, two } // 另一种形式 enum Number{zero,one,two} Enum 提供一些实用的静态方法： 比较枚举的方法; 枚举与字符串互转: 枚举转换为字符串 enum Colors { Red, Green, Blue, Yellow }; Colors.Green.ToString() // 输出&amp;#34;Green&amp;#34;字符串 // 利用Enum的静态方法GetName()与GetNames() // public static string GetName(Type enumType,Object value) // public static string[] GetNames(Type enumType) Enum.</description>
+    </item>
+    
+    <item>
+      <title>C# Ref type [C#引用类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharp/csharp-ref-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/csharp/csharp-ref-type/</guid>
+      <description>引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。
+引用类型声明关键字：
+class interface delegate record 内置引用类型
+动态类型; dynamic 类型表示变量的使用和对其成员的引用绕过编译时类型检查。 改为在运行时解析这些操作; 对象类型; object 类型是 System.Object 在 .NET 中的别名; 字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名; 委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化; 枚举类型本身为值类型，但是.NET提供了System.Enum类，所以枚举中会有一个静态方法Enum.ToObject()用于做转换;
+Ref:
+[引用类型定义](&amp;gt; https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types)
+结构体和类的区别</description>
     </item>
     
     <item>
       <title>C# Value type [C#值类型]</title>
-      <link>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</link>
+      <link>https://yathenstianbase.github.io/posts/csharp/csharp-value-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/csharp/csharpvaluetype/</guid>
-      <description>1,值类型定义
-https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types#kinds-of-value-types-and-type-constraints
-结构体和类的区别
-值类型的变量包含类型的实例。(应该指的就是实际的数值,而非一个引用地址;在内存处如何描述呢?)
-值类型在继承体系中由ValueType类表示;
-默认情况下，在分配中(应该指的是内存的分配)，通过将实参传递给方法并返回方法结果来复制变量值。 对于值类型变量，会复制相应的类型实例;
-伪代码示例:
-int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); // } print(val); // 第一次打印为 4.14
-// 第二次打印为 3.14
-两次的打印的是两个不同实例的值
-2,值类型的种类 C# 提供以下内置值类型，也称为“简单类型”,所有简单值都是结构类型： 整型数值类型 - .NET类型
-- sbyte System.Sbyte- byte System.Byte- short System.Int16- ushort System.Uint16- int System.Int32- uint System.UInt32- long System.Int64- ulong System.UInt64- nint System.IntPtr- nuint System.UIntPtr浮点型数值类型 - .NET类型
-- float System.</description>
+      <guid>https://yathenstianbase.github.io/posts/csharp/csharp-value-type/</guid>
+      <description>值类型的变量包含类型的实例; 在内存分配上，值类型可以存储再栈和堆中，引用类型存储在堆上; 默认情况下，在分配中，通过将实参传递给方法并返回方法结果来复制变量值。 对于值类型变量，会复制相应的类型实例; 值类型在继承体系中由ValueType类表示; 值类型保存的数据在传递前后是独立的;
+// 伪码 int val = 3.14f; 传递进方法 change(int val) { val += 1.00f； print(val); // 第一次打印为 4.14 } print(val); // 第二次打印为 3.14 值类型的种类
+C# 提供以下内置值类型，也称为“简单类型”,所有简单值都是结构类型： 整型数值类型 &amp;mdash; .NET类型
+sbyte &amp;mdash; System.Sbyte byte &amp;mdash; System.Byte short &amp;mdash; System.Int16 ushort &amp;mdash; System.Uint16 int &amp;mdash; System.Int32 uint &amp;mdash; System.UInt32 long &amp;mdash; System.Int64 ulong &amp;mdash; System.UInt64 nint &amp;mdash; System.IntPtr nuint &amp;mdash; System.UIntPtr 浮点型数值类型 - .NET类型
+float System.Single double System.</description>
     </item>
     
     <item>
@@ -175,7 +179,7 @@ class Add : Command { // 构建函数，传入Receiver public Add(Receiver recei
     </item>
     
     <item>
-      <title>Editor LifeCycle Methods in Unity.</title>
+      <title>Editor LifeCycle Methods in Unity [Unity Editor 生命周期函数]</title>
       <link>https://yathenstianbase.github.io/posts/unity3d/editor-lifecycle-methods-in-unity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -184,7 +188,7 @@ class Add : Command { // 构建函数，传入Receiver public Add(Receiver recei
 需要使用 &amp;ldquo;using UnityEditor;&amp;ldquo;引入；
 类文件需要放入名称为&amp;quot;Editor&amp;quot;的文件目录下，此目录可以在Assets目录下位置创建；
 Edtior类包含的生命周期函数如下：
-public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow&amp;gt;(); } private void OnEnable() { Debug.Log(&amp;#34;当打开界面的时候调用&amp;#34;); } private void OnInspectorUpdate() { Debug.Log(&amp;#34;当属性界面更新时&amp;#34;);//几乎一直在更新 } private void OnHierarchyChange() { Debug.Log(&amp;#34;当场景层次界面发生改变时调用&amp;#34;);//在Hierarchy界面改变（增加、减 少 物体） } private void OnProjectChange() { Debug.Log(&amp;#34;当项目发生更改时调用&amp;#34;);//在Project视图删除、增加文件 } private void OnGUI() { Debug.Log(&amp;#34;当渲染UI的时候调用&amp;#34;); } private void OnFocus() { Debug.Log(&amp;#34;当被聚焦的时候调用&amp;#34;); } private void OnSelectionChange() { Debug.Log(&amp;#34;当选择发生更改时调用&amp;#34;);//选中的可选项（在Project和Hierarchy视图中） } private void OnLostFocus() { Debug.Log(&amp;#34;当失去焦点时调用&amp;#34;); } private void OnDisable() { Debug.Log(&amp;#34;当隐藏的时候调用&amp;#34;); } private void OnDestroy() { Debug.</description>
+public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow&amp;gt;(); } private void OnEnable() { Debug.Log(&amp;#34;当打开界面的时候调用&amp;#34;); } private void OnInspectorUpdate() { Debug.Log(&amp;#34;当属性界面更新时&amp;#34;);//几乎一直在更新 } private void OnHierarchyChange() { Debug.Log(&amp;#34;当场景层次界面发生改变时调用&amp;#34;);//在Hierarchy界面改变（增加、减少物体） } private void OnProjectChange() { Debug.Log(&amp;#34;当项目发生更改时调用&amp;#34;);//在Project视图删除、增加文件 } private void OnGUI() { Debug.Log(&amp;#34;当渲染UI的时候调用&amp;#34;); } private void OnFocus() { Debug.Log(&amp;#34;当被聚焦的时候调用&amp;#34;); } private void OnSelectionChange() { Debug.Log(&amp;#34;当选择发生更改时调用&amp;#34;);//选中的可选项（在Project和Hierarchy视图中） } private void OnLostFocus() { Debug.Log(&amp;#34;当失去焦点时调用&amp;#34;); } private void OnDisable() { Debug.Log(&amp;#34;当隐藏的时候调用&amp;#34;); } private void OnDestroy() { Debug.</description>
     </item>
     
     <item>
@@ -224,7 +228,9 @@ ffmpeg -i input.mp4 -s 240x160 -r 10 -b 512K output.avi 压缩命令
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/posts/unity3d/implement-simple-object-pool-in-unity/</guid>
-      <description>定义接口,规定对象池中必须要有的几个方法,子类以此实现；
+      <description>对象池的作用在于避免频繁的进行对象的创建和销毁造成的资源浪费;
+维护对象池也是需要资源的,为了限制其资源的占用，可以在创造一个对象池的时候,会限制其容量;
+定义接口,规定对象池中必须要有的几个方法,子类以此实现；
 interface IMonsterPool { GameObject Create(GameObject mon); GameObject Get(); void Recycle(GameObject mon); int CurrentCount(); void EmptyAll(); } 定义类,实现上述接口,考虑到要实行单例模式,而且并没有挂载的需要,因此不继承MonoBehaviour；
 public class MonsterPool : IMonsterPool 定义容量的大小,当然可以从配置文件中来进行读取,并且使用了单例模式来获取对象池实例,这肯定不是唯一的办法,对象池的个数可以根据实际来调整,相应的取消单例模式即可; orignalMon为 初始的实例化对象,之后由对象池创建并管理的对象实际上都是此对象的克隆.可以在游戏开始加载时候从Assetbundle中来进行获取或直接Resource方法获取(不过此方法Unity官方似乎不推荐,可能有较大的资源性能等损耗);
 #region protected int _Max = 50; protected int _Min = 0; protected int _DefCap = 5; private static List&amp;lt;GameObject&amp;gt; mons; private static MonsterPool _Instance; public static MonsterPool Instance { get { if (_Instance == null) { _Instance = new MonsterPool(); } return _Instance; } } private GameObject orignalMon; #endregion 构造方法创建对象的容器List,如果有多种不同的对象,也可以使用Dictionary;Init() 方法是传入的是初始对象,也可以说是模板^.</description>
@@ -298,7 +304,7 @@ Time.time Time.deltaTime &amp;ndash; Update()函数中的时间分片，不是�
     </item>
     
     <item>
-      <title>Unity plugin - A Pathfinding Project Pro</title>
+      <title>Unity plugin - A Pathfinding Project Pro [Unity A*寻路插件]</title>
       <link>https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

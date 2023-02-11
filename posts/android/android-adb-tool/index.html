@@ -2,7 +2,7 @@
 <html lang="en">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <title>
-  Unity plugin - A Pathfinding Project Pro [Unity A*寻路插件] · Paradoxical
+  Android ADB Tool [ADB工具命令] · Paradoxical
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,26 +12,26 @@
 
 
 <meta name="author" content="Yathen Stianbase">
-<meta name="description" content="Unity plugin - A Pathfinding Project Pro.">
+<meta name="description" content="Android ADB Tool.">
 <meta name="keywords" content="blog,developer,personal">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Unity plugin - A Pathfinding Project Pro [Unity A*寻路插件]"/>
-<meta name="twitter:description" content="Unity plugin - A Pathfinding Project Pro."/>
+<meta name="twitter:title" content="Android ADB Tool [ADB工具命令]"/>
+<meta name="twitter:description" content="Android ADB Tool."/>
 
-<meta property="og:title" content="Unity plugin - A Pathfinding Project Pro [Unity A*寻路插件]" />
-<meta property="og:description" content="Unity plugin - A Pathfinding Project Pro." />
+<meta property="og:title" content="Android ADB Tool [ADB工具命令]" />
+<meta property="og:description" content="Android ADB Tool." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://yathenstianbase.github.io/posts/android/android-adb-tool/" /><meta property="article:section" content="posts" />
+
+
+<meta property="og:see_also" content="https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/" />
 
 
 
 
 
-
-
-
-<link rel="canonical" href="https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/">
+<link rel="canonical" href="https://yathenstianbase.github.io/posts/android/android-adb-tool/">
 
 
 <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
@@ -142,8 +142,8 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/">
-              Unity plugin - A Pathfinding Project Pro [Unity A*寻路插件]
+            <a class="title-link" href="https://yathenstianbase.github.io/posts/android/android-adb-tool/">
+              Android ADB Tool [ADB工具命令]
             </a>
           </h1>
         </div>
@@ -161,12 +161,12 @@
           
           <div class="categories">
   <i class="fa fa-folder" aria-hidden="true"></i>
-    <a href="/categories/unity-plugin/">Unity plugin</a></div>
+    <a href="/categories/android-adb-tool/">Android ADB Tool</a></div>
 
           <div class="tags">
   <i class="fa fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="/tags/plugin/">plugin</a>
+      <a href="/tags/adb/">ADB</a>
     </span></div>
 
         </div>
@@ -174,48 +174,31 @@
 
       <div class="post-content">
         
-        <p>相关插件
-<a href="https://assetstore.unity.com/packages/tools/ai/a-pathfinding-project-pro-87744">A* pathfinding project pro</a></p>
-<p>实现在Unity上的AStarPathfinding寻路的插件，提供了高级的寻路AI系统;</p>
+        <ul>
+<li>命令:
 <ul>
-<li>
-<p>新建空物体命名为&quot;A*&quot;，并添加pathfinder组件脚本;
-<img src="/images/Astar01.png" alt=""></p>
-</li>
-<li>
-<p>添加Graph，选择第一种类型Grid Graph;
-<img src="/images/Add%20Graph.png" alt="">)</p>
-<ul>
-<li>
-<p>Shap &ndash; 寻路网格类型</p>
-</li>
-<li>
-<p>width 和 depth &ndash; 表示寻路网格面积区域;</p>
-</li>
-<li>
-<p>Node size &ndash; 单个寻路网格单位尺寸</p>
-</li>
-<li>
-<p>Height testing</p>
-<ul>
-<li>ray length &ndash; 从上自下的发射检测射线，以此来确定此网格单位表面是否可寻址区域;
-通过移动来对比出经过射线检测后寻路网格区域:
-<img src="/images/GridScanResult.png" alt="">
-<img src="/images/GridScanResultComapare.png" alt=""></li>
+<li>查看帮助：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>adb --help
+</span></span></code></pre></div></li>
+<li>查看连接设备：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>adb devices
+</span></span></code></pre></div></li>
+<li>开启无线网络连接：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>adb tcpip port （默认5555）
+</span></span></code></pre></div></li>
+<li>使用无线网络连接：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>adb connect ip_address
+</span></span></code></pre></div></li>
+<li>连接shell：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>adb -s 指定设备 shell
+</span></span></code></pre></div></li>
+<li>倒出配置：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>dumpsys
+</span></span></code></pre></div>使用dumpsys 命令查找app启动入口(注意 Activity Resolver Table: 下的 android.intent.action.MAIN: 之后一般包含的就是启动activity);</li>
+<li>启动app：
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>am start {包(package)名}/{包名}.{活动(activity)名称}
+</span></span></code></pre></div></li>
 </ul>
-</li>
-<li>
-<p>Collision Testing</p>
-<ul>
-<li>Obstacle Layer Mask &ndash; 添加障碍物层，属于此层的物体将不会在其表面生成寻路网格:
-<img src="/images/Exclude%20Obstacle.png" alt=""></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>添加寻路AI，可以从示例场景中拷贝bot对象;
-<img src="/images/RuntimeResult.gif" alt=""></p>
 </li>
 </ul>
 
@@ -229,6 +212,28 @@
   
     
     
+    
+      <h3 id="see-also-in-android-develope">
+        See also in Android Develope
+        <a class="heading-link" href="#see-also-in-android-develope">
+          <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="/posts/android/androidsdk-sdkmanager/">AndroidSDK sdkmanager [sdkmanager 命令工具]</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
     
   
 </section>

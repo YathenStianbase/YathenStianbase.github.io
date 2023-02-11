@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Editor LifeCycle Methods in Unity.</title>
+      <title>Editor LifeCycle Methods in Unity [Unity Editor 生命周期函数]</title>
       <link>https://yathenstianbase.github.io/posts/unity3d/editor-lifecycle-methods-in-unity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -16,7 +16,7 @@
 需要使用 &amp;ldquo;using UnityEditor;&amp;ldquo;引入；
 类文件需要放入名称为&amp;quot;Editor&amp;quot;的文件目录下，此目录可以在Assets目录下位置创建；
 Edtior类包含的生命周期函数如下：
-public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow&amp;gt;(); } private void OnEnable() { Debug.Log(&amp;#34;当打开界面的时候调用&amp;#34;); } private void OnInspectorUpdate() { Debug.Log(&amp;#34;当属性界面更新时&amp;#34;);//几乎一直在更新 } private void OnHierarchyChange() { Debug.Log(&amp;#34;当场景层次界面发生改变时调用&amp;#34;);//在Hierarchy界面改变（增加、减 少 物体） } private void OnProjectChange() { Debug.Log(&amp;#34;当项目发生更改时调用&amp;#34;);//在Project视图删除、增加文件 } private void OnGUI() { Debug.Log(&amp;#34;当渲染UI的时候调用&amp;#34;); } private void OnFocus() { Debug.Log(&amp;#34;当被聚焦的时候调用&amp;#34;); } private void OnSelectionChange() { Debug.Log(&amp;#34;当选择发生更改时调用&amp;#34;);//选中的可选项（在Project和Hierarchy视图中） } private void OnLostFocus() { Debug.Log(&amp;#34;当失去焦点时调用&amp;#34;); } private void OnDisable() { Debug.Log(&amp;#34;当隐藏的时候调用&amp;#34;); } private void OnDestroy() { Debug.</description>
+public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow&amp;gt;(); } private void OnEnable() { Debug.Log(&amp;#34;当打开界面的时候调用&amp;#34;); } private void OnInspectorUpdate() { Debug.Log(&amp;#34;当属性界面更新时&amp;#34;);//几乎一直在更新 } private void OnHierarchyChange() { Debug.Log(&amp;#34;当场景层次界面发生改变时调用&amp;#34;);//在Hierarchy界面改变（增加、减少物体） } private void OnProjectChange() { Debug.Log(&amp;#34;当项目发生更改时调用&amp;#34;);//在Project视图删除、增加文件 } private void OnGUI() { Debug.Log(&amp;#34;当渲染UI的时候调用&amp;#34;); } private void OnFocus() { Debug.Log(&amp;#34;当被聚焦的时候调用&amp;#34;); } private void OnSelectionChange() { Debug.Log(&amp;#34;当选择发生更改时调用&amp;#34;);//选中的可选项（在Project和Hierarchy视图中） } private void OnLostFocus() { Debug.Log(&amp;#34;当失去焦点时调用&amp;#34;); } private void OnDisable() { Debug.Log(&amp;#34;当隐藏的时候调用&amp;#34;); } private void OnDestroy() { Debug.</description>
     </item>
     
     <item>
@@ -25,7 +25,9 @@ public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/posts/unity3d/implement-simple-object-pool-in-unity/</guid>
-      <description>定义接口,规定对象池中必须要有的几个方法,子类以此实现；
+      <description>对象池的作用在于避免频繁的进行对象的创建和销毁造成的资源浪费;
+维护对象池也是需要资源的,为了限制其资源的占用，可以在创造一个对象池的时候,会限制其容量;
+定义接口,规定对象池中必须要有的几个方法,子类以此实现；
 interface IMonsterPool { GameObject Create(GameObject mon); GameObject Get(); void Recycle(GameObject mon); int CurrentCount(); void EmptyAll(); } 定义类,实现上述接口,考虑到要实行单例模式,而且并没有挂载的需要,因此不继承MonoBehaviour；
 public class MonsterPool : IMonsterPool 定义容量的大小,当然可以从配置文件中来进行读取,并且使用了单例模式来获取对象池实例,这肯定不是唯一的办法,对象池的个数可以根据实际来调整,相应的取消单例模式即可; orignalMon为 初始的实例化对象,之后由对象池创建并管理的对象实际上都是此对象的克隆.可以在游戏开始加载时候从Assetbundle中来进行获取或直接Resource方法获取(不过此方法Unity官方似乎不推荐,可能有较大的资源性能等损耗);
 #region protected int _Max = 50; protected int _Min = 0; protected int _DefCap = 5; private static List&amp;lt;GameObject&amp;gt; mons; private static MonsterPool _Instance; public static MonsterPool Instance { get { if (_Instance == null) { _Instance = new MonsterPool(); } return _Instance; } } private GameObject orignalMon; #endregion 构造方法创建对象的容器List,如果有多种不同的对象,也可以使用Dictionary;Init() 方法是传入的是初始对象,也可以说是模板^.</description>

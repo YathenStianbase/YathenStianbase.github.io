@@ -7,24 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/csharp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>C# Ref type [C#引用类型]</title>
-      <link>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</link>
+      <title>C# Enum type [C#之枚举类型]</title>
+      <link>https://yathenstianbase.github.io/posts/csharp/csharp-enum-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/posts/csharp/c#-ref-type/</guid>
-      <description>1,引用类型定义
-https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types
-引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。
-下列关键字用于声明引用类型：
-class
-interface
-delegate
-record
-内置引用类型
-动态类型; dynamic 类型表示变量的使用和对其成员的引用绕过编译时类型检查。 改为在运行时解析这些操作;
-对象类型; object 类型是 System.Object 在 .NET 中的别名;
-字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名;
-委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化;</description>
+      <guid>https://yathenstianbase.github.io/posts/csharp/csharp-enum-type/</guid>
+      <description>枚举属于值类型，有一组一组的常量和整型值(Int32)组成; C#中使用枚举类型，有利于代码的可读性; 声明格式: 根据&amp;quot;Naming rule violation&amp;quot;说明,枚举命名的头需要建议大写,这可以在visualstudio的提示中看到; enum Name : type { key = &amp;lt;value1&amp;gt;, key = &amp;lt;value2&amp;gt;, key = &amp;lt;value3&amp;gt; } 等号左边相当于变量引用,右边为变量值,type表示这个枚举中的数据类型,VS的提示中包括{byte,sbyte,short,ushort,int,uint,long,ulong}; 默认的类型应该为int,并且数值是按照声明顺序从0依次递增; enum Number : int { zero = 0, // 若自定第一顺位的值，则后续值依次增加1 one, two } // 另一种形式 enum Number{zero,one,two} Enum 提供一些实用的静态方法： 比较枚举的方法; 枚举与字符串互转: 枚举转换为字符串 enum Colors { Red, Green, Blue, Yellow }; Colors.Green.ToString() // 输出&amp;#34;Green&amp;#34;字符串 // 利用Enum的静态方法GetName()与GetNames() // public static string GetName(Type enumType,Object value) // public static string[] GetNames(Type enumType) Enum.</description>
     </item>
     
   </channel>

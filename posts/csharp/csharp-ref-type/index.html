@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+  C# Ref type [C#引用类型] · Paradoxical
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Yathen Stianbase">
+<meta name="description" content="Reference type in C#.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C# Ref type [C#引用类型]"/>
+<meta name="twitter:description" content="Reference type in C#."/>
+
+<meta property="og:title" content="C# Ref type [C#引用类型]" />
+<meta property="og:description" content="Reference type in C#." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yathenstianbase.github.io/posts/csharp/csharp-ref-type/" /><meta property="article:section" content="posts" />
+
+
+<meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/accessibility-levels/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/csharp-enum-type/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/csharp/csharp-value-type/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/" /><meta property="og:see_also" content="https://yathenstianbase.github.io/posts/designpattern/command-pattern/" />
+
+
+
+
+
+<link rel="canonical" href="https://yathenstianbase.github.io/posts/csharp/csharp-ref-type/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Paradoxical
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About [关于我]</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog [文章]</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">Categories [分类]</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects [项目]</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me [交流]</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://yathenstianbase.github.io/posts/csharp/csharp-ref-type/">
+              C# Ref type [C#引用类型]
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/csharp-language/">CSharp Language</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/c#/">C#</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <ul>
+<li>
+<blockquote>
+<p>引用类型的变量存储对其数据（对象）的引用，而值类型的变量直接包含其数据。 对于引用类型，两种变量可引用同一对象；因此，对一个变量执行的操作会影响另一个变量所引用的对象。 对于值类型，每个变量都具有其自己的数据副本，对一个变量执行的操作不会影响另一个变量（in、ref 和 out 参数变量除外；请参阅 in、ref 和 out 参数修饰符）。</p>
+</blockquote>
+</li>
+<li>
+<p>引用类型声明关键字：</p>
+<ul>
+<li>class</li>
+<li>interface</li>
+<li>delegate</li>
+<li>record</li>
+</ul>
+</li>
+<li>
+<p>内置引用类型</p>
+<ul>
+<li>动态类型; dynamic 类型表示变量的使用和对其成员的引用绕过编译时类型检查。 改为在运行时解析这些操作;</li>
+<li>对象类型; object 类型是 System.Object 在 .NET 中的别名;</li>
+<li>字符串类型; string 类型表示零个或多个 Unicode 字符的序列。 string 是 System.String 在 .NET 中的别名;</li>
+<li>委托类型; 在 .NET 中，System.Action 和 System.Func 类型为许多常见委托提供泛型定义；委托可以被实例化;</li>
+</ul>
+</li>
+<li>
+<p>枚举类型本身为值类型，但是.NET提供了System.Enum类，所以枚举中会有一个静态方法Enum.ToObject()用于做转换;</p>
+</li>
+</ul>
+<hr>
+<p>Ref:</p>
+<ul>
+<li>
+<blockquote>
+<p>[引用类型定义](&gt; <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types">https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/reference-types</a>)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://blog.csdn.net/u013341034/article/details/50884967">结构体和类的区别</a></p>
+</blockquote>
+</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-program-language">
+        See also in Program Language
+        <a class="heading-link" href="#see-also-in-program-language">
+          <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+            <li>
+              <a href="/posts/csharp/accessibility-levels/">Accessibility Levels in C# [C#可访问级别]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/csharp/csharp-enum-type/">C# Enum type [C#之枚举类型]</a>
+            </li>
+          
+        
+          
+        
+          
+            <li>
+              <a href="/posts/csharp/csharp-value-type/">C# Value type [C#值类型]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/plugin/c&#43;&#43;nativeforunity/">C&#43;&#43; Native plugin for Unity [Unity C&#43;&#43;原生插件管理]</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/designpattern/command-pattern/">Command Pattern [命令模式]</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Yathen Stianbase 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
