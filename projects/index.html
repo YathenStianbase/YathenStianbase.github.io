@@ -147,6 +147,132 @@ Feel free to contact with me : Stianbase@foxmail.com
 </blockquote>
 <hr>
 
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	
+	
+
+	
+		<script src="/shortcode-gallery/jquery-3.6.1.min.js"></script>
+	
+	
+	
+		<script src="/shortcode-gallery/lazy/jquery.lazy.min.js"></script>
+	
+
+	<script src="/shortcode-gallery/swipebox/js/jquery.swipebox.min.js"></script>
+	<link rel="stylesheet" href="/shortcode-gallery/swipebox/css/swipebox.min.css">
+
+	<script src="/shortcode-gallery/justified_gallery/jquery.justifiedGallery.min.js"></script>
+	<link rel="stylesheet" href="/shortcode-gallery/justified_gallery/justifiedGallery.min.css"/>
+
+
+<style>
+	
+
+	
+</style>
+
+
+
+
+
+<div id="gallery-e28d8b11de674c03dee477c003fed3a1-0-wrapper" class="gallery-wrapper">
+<div id="gallery-e28d8b11de674c03dee477c003fed3a1-0" class="justified-gallery">
+	
+</div>
+</div>
+
+<script>
+	if (!jQuery) {
+		alert("jquery is not loaded");
+	}
+
+	$( document ).ready(() => {
+		const gallery = $("#gallery-e28d8b11de674c03dee477c003fed3a1-0");
+		
+
+		
+		let swipeboxInstance = null;
+
+		
+		
+		gallery.on('jg.complete', () => {
+			
+				
+				
+				$(() => {
+					$('.lazy').Lazy({
+						visibleOnly: true,
+						afterLoad: element => element.css({filter: "none", transition: "filter 1.0s ease-in-out"})
+					});
+				});
+			
+
+			swipeboxInstance = $('.galleryImg').swipebox(
+				jQuery.extend({},
+					{  }
+				)
+			);
+		});
+
+		
+		gallery.justifiedGallery({
+			rowHeight :  150 ,
+			margins :  5 ,
+			border : 0,
+			randomize :  false ,
+			waitThumbnailsLoad : false,
+			lastRow : "justify",
+			captions : false,
+			
+			
+		});
+
+		
+		
+	});
+</script>
+
+
   <ul>
     
     <li>
