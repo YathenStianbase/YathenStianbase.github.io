@@ -270,6 +270,20 @@ Time.time Time.deltaTime &amp;ndash; Update()函数中的时间分片，不是�
     </item>
     
     <item>
+      <title>Unity Coroutine [Unity Coroutine 协程]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/unity-coroutine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/unity-coroutine/</guid>
+      <description> Coroutine协程是Unity提供的一种在主线程中处理额外任务的方式;
+协程并不是多线程，而是利用迭代器进行帧或者时间切片控制，它可以决定每次经过多少切片时间后将游戏的逻辑控制交给主线程;
+在Unity的Monobehavior生命周期中,有一个被称为&amp;quot;game logic&amp;quot;的部分,其中包含&amp;quot;yield StarCoroutine&amp;quot;等操作，是属于处理协程的运算逻辑的部分;
+Monobehavior生命周期中,依次经过 Star -&amp;gt; yield WaitForFixedUpdate -&amp;gt; Update -&amp;gt; LateUpdate,以下代码使用Unity逐帧运行功能可以初步简单验证:
+private void Start() { StartCoroutine(CoUpdate()); } public IEnumerator CoUpdate() { Debug.Log(&amp;#34;before loop CoUpdate&amp;#34;); while (true) { Debug.Log(&amp;#34;before CoUpdate&amp;#34;); yield return new WaitForFixedUpdate(); // 在FixedUpdate处理后 Debug.Log(&amp;#34;after CoUpdate&amp;#34;); } } private void Update() { Debug.Log(&amp;#34;update&amp;#34;); } private void LateUpdate() { Debug.Log(&amp;#34;lateupdate&amp;#34;); } 先点暂停然后启动，逐帧运行一次，打印结果为: 协程的一种暂停方式:
+while(!some_condition) { yield return null; } </description>
+    </item>
+    
+    <item>
       <title>Unity plugin - A Pathfinding Project Pro [Unity A*寻路插件]</title>
       <link>https://yathenstianbase.github.io/posts/plugin/a-pathfinding-project-pro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

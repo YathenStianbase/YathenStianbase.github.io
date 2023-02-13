@@ -285,6 +285,21 @@ half4 frag(v2f i) : COLOR { return _Color; } Output Merger (OM) stage</descripti
     </item>
     
     <item>
+      <title>RWBY</title>
+      <link>https://yathenstianbase.github.io/thinking/rwby/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/thinking/rwby/</guid>
+      <description>RWBY &amp;ndash; 一部难忘的Anime
+虽然距离第一次观看这部Anime已经是距离很长一段时间了，但是这部Anime的各方面给人的映像还是历历在目的。相信喜欢这部Anime的人，大多数都是首先被动作戏给惊艳到的，流畅和紧凑的动作编排，充满创意的武器设定，都会牢牢抓住人的眼球；
+这段时间偶然关注到一位视频主，其聊到的话题大多数为游戏和影视的，其中也包含了&amp;quot;动作性&amp;quot;这一类的话题，还分析不少日式美式以及中式动作片中的特点，而提及RWBY时，称其中包含了以上种类的混合形式。的确，如果你喜欢但以前香港的功夫片，一定会在RWBY中找到相识的感觉，而你喜欢日式中的超能系以及任务画风，也能很明显感觉到，因为其画风就是日式，但是处处都有欧美风格的影子，比如说话方式和任务性格，整个片子的基调基本就是一种杂糅，但是糅的很好。
+MONTY-OUM是这部Anime的作者，属于很全能的作者，如果你去观看其以前的作品，主要都是以动作为主，并且镜头和动作编排十分的有个人特色，其本人可以说是天才选手，至少在我这个外行人目前看来是这样；
+从RWBY一开始的四部特色鲜明的预告片放出，如果找回之前发布现场的视频观看，当时的现场观众激动情绪可以说不亚于现在3A游戏发布会现场；在经历第一二季的放出，随着第三季预告放出，RWBY在小众圈子可以说声名鹊起。大概也是在那个时候，我看到了这部不可思议的作品，并留下了独一无二的印象。
+当我带着不可思议的映像回顾这部Anime并了解到其作者时，同时也确确实实理解了一个词 &amp;ndash; &amp;ldquo;天妒英才&amp;rdquo;。Monty没有完成这部作品，而留下的空白却没有人能够填补，可能有人愿意付出他那样的努力，但是可能其创作方式却独特到没人能效仿，在其后的季集中，RWBY似乎丧失了灵魂。
+RWBY的前三季，难忘而又遗憾&amp;hellip;</description>
+    </item>
+    
+    <item>
       <title>Stencil [深度模板] 与 RayMarch[光线步进]</title>
       <link>https://yathenstianbase.github.io/posts/stencilbuffer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -316,6 +331,20 @@ Shader &amp;#34;Unlit/RayMarchInWorld01&amp;#34; { Properties { _MainTex (&amp;#
       <description>Unity在C#脚本和Shader脚本中都提供了时间类；
 Unity 提供的时间变量有：
 Time.time Time.deltaTime &amp;ndash; Update()函数中的时间分片，不是固定值； Time.fixedDeltaTime &amp;ndash; FixUpdate()函数中的时间分片，为固定值； Time.timeScale &amp;ndash; 用于确定游戏程序中时间流逝速度；可以利用此变量实现暂停或者加速效果； 搭配Mathf.Lerp()函数使用，可以实现平滑时间过度效果； // 实现类似superhot的时间平缓效果； public bool action; float x = Input.GetAxisRaw(&amp;#34;Horizontal&amp;#34;); float y = Input.GetAxisRaw(&amp;#34;Vertical&amp;#34;); float time = (x != 0 || y != 0) ? 1f : .03f; float lerpTime = (x != 0 || y != 0) ? .05f : .5f; time = action ? 1 : time; lerpTime = action ? .1f : lerpTime; Time.</description>
+    </item>
+    
+    <item>
+      <title>Unity Coroutine [Unity Coroutine 协程]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/unity-coroutine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/unity-coroutine/</guid>
+      <description> Coroutine协程是Unity提供的一种在主线程中处理额外任务的方式;
+协程并不是多线程，而是利用迭代器进行帧或者时间切片控制，它可以决定每次经过多少切片时间后将游戏的逻辑控制交给主线程;
+在Unity的Monobehavior生命周期中,有一个被称为&amp;quot;game logic&amp;quot;的部分,其中包含&amp;quot;yield StarCoroutine&amp;quot;等操作，是属于处理协程的运算逻辑的部分;
+Monobehavior生命周期中,依次经过 Star -&amp;gt; yield WaitForFixedUpdate -&amp;gt; Update -&amp;gt; LateUpdate,以下代码使用Unity逐帧运行功能可以初步简单验证:
+private void Start() { StartCoroutine(CoUpdate()); } public IEnumerator CoUpdate() { Debug.Log(&amp;#34;before loop CoUpdate&amp;#34;); while (true) { Debug.Log(&amp;#34;before CoUpdate&amp;#34;); yield return new WaitForFixedUpdate(); // 在FixedUpdate处理后 Debug.Log(&amp;#34;after CoUpdate&amp;#34;); } } private void Update() { Debug.Log(&amp;#34;update&amp;#34;); } private void LateUpdate() { Debug.Log(&amp;#34;lateupdate&amp;#34;); } 先点暂停然后启动，逐帧运行一次，打印结果为: 协程的一种暂停方式:
+while(!some_condition) { yield return null; } </description>
     </item>
     
     <item>

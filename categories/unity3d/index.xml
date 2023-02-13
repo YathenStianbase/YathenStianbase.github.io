@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Unity3D on Paradoxical</title>
-    <link>https://yathenstianbase.github.io/series/unity3d/</link>
+    <link>https://yathenstianbase.github.io/categories/unity3d/</link>
     <description>Recent content in Unity3D on Paradoxical</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://yathenstianbase.github.io/series/unity3d/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/unity3d/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity Coroutine [Unity Coroutine 协程]</title>
       <link>https://yathenstianbase.github.io/posts/unity3d/unity-coroutine/</link>
@@ -18,19 +18,6 @@
 Monobehavior生命周期中,依次经过 Star -&amp;gt; yield WaitForFixedUpdate -&amp;gt; Update -&amp;gt; LateUpdate,以下代码使用Unity逐帧运行功能可以初步简单验证:
 private void Start() { StartCoroutine(CoUpdate()); } public IEnumerator CoUpdate() { Debug.Log(&amp;#34;before loop CoUpdate&amp;#34;); while (true) { Debug.Log(&amp;#34;before CoUpdate&amp;#34;); yield return new WaitForFixedUpdate(); // 在FixedUpdate处理后 Debug.Log(&amp;#34;after CoUpdate&amp;#34;); } } private void Update() { Debug.Log(&amp;#34;update&amp;#34;); } private void LateUpdate() { Debug.Log(&amp;#34;lateupdate&amp;#34;); } 先点暂停然后启动，逐帧运行一次，打印结果为: 协程的一种暂停方式:
 while(!some_condition) { yield return null; } </description>
-    </item>
-    
-    <item>
-      <title>Unity Scriptable Render Pipeline [Unity可编程渲染管线]</title>
-      <link>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/posts/unityscriptablerenderingpipeline/</guid>
-      <description>Scriptable Render PipelineLink to headingUnity中SRP管线简化代码构成;
-定义SRP资源文件, 对象包含关系为 RenderPipelineAsset -&amp;gt; RenderPipeline -&amp;gt; CRenderer;
-CSRPA.cs 定义SRP资源类
-[CreateAssetMenu(menuName = &amp;#34;CSRPA&amp;#34;)] public class CSRPA : RenderPipelineAsset { public bool isUseSRPBatching; protected override RenderPipeline CreatePipeline() { return new CSRP(isUseSRPBatching); } } CSRP.cs 定义渲染管线类
-internal class CSRP : RenderPipeline { CRenderer crenderer = new CRenderer(); private bool isUseSRPBatching; public CSRP(bool isUseSRPBatching) { this.isUseSRPBatching = isUseSRPBatching; GraphicsSettings.useScriptableRenderPipelineBatching = isUseSRPBatching; } protected override void Render(ScriptableRenderContext context, Camera[] cameras) { foreach (Camera cam in cameras) { crenderer.</description>
     </item>
     
   </channel>
