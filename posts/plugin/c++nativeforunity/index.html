@@ -181,16 +181,13 @@
 <p>Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;</p>
 <p>UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;</p>
 <ul>
-<li>
-<p>git clone 源码之后解压到Unity项目的Assets目录下；</p>
+<li>安装方式:
 <ul>
-<li>
-<p>添加空物体，并挂载DllManipulatorScript脚本;</p>
-</li>
-<li>
-<p>启用&quot;Enable in Edit Mode&quot;, 开启后会自动在程序退出时候卸载C++ dll;
-<img src="/images/CppNativeForUnity_DllManipulatorScriptInspector.png" alt="DllManipulatorScript"></p>
-</li>
+<li>git clone 源码之后解压到Unity项目的Assets目录下,某些Unity版本如果出现报错(error CS0246),是因为Api Compatibility Level设置为.net standard 2.0，而.net standard 2.0不支持emit导致的；</li>
+<li>添加空物体，并挂载DllManipulatorScript脚本;</li>
+<li>启用&quot;Enable in Edit Mode&quot;, 开启后会自动在程序退出时候卸载C++ dll;
+<img src="/images/CppNativeForUnity_DllManipulatorScriptInspector.png" alt="DllManipulatorScript"></li>
+<li>Dll path pattern默认有&quot;__&quot;,Unity打包之后可能会识别不了;(去掉或者打包手动修改可修复)</li>
 </ul>
 </li>
 </ul>
@@ -274,7 +271,7 @@
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">delete</span> cp;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>导出时候需要注意文件名的命名，在解决方案属性中修改TargetName，需要加上&rsquo;_&lsquo;前缀:
+</span></span></code></pre></div><p>导出时候需要注意文件名的命名，在解决方案属性中修改TargetName，需要加上&rsquo;_&lsquo;前缀(需要与Unity端插件的&quot;Dll path pattern&quot;保持一致):
 <img src="/images/CppNativeForUnity_TargetName.png" alt="解决方案属性中修改TargetName"></p>
 </li>
 <li>

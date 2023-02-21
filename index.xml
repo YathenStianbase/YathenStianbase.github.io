@@ -35,6 +35,20 @@
     </item>
     
     <item>
+      <title></title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/unity3dscriptablerenderingpileline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/unity3dscriptablerenderingpileline/</guid>
+      <description>Scriptable Render Pipeline
+Unity中SRP管线简化代码构成;
+定义SRP资源文件, 对象包含关系为 RenderPipelineAsset -&amp;gt; RenderPipeline -&amp;gt; CRenderer;
+CSRPA.cs 定义SRP资源类
+[CreateAssetMenu(menuName = &amp;#34;CSRPA&amp;#34;)] public class CSRPA : RenderPipelineAsset { public bool isUseSRPBatching; protected override RenderPipeline CreatePipeline() { return new CSRP(isUseSRPBatching); } } CSRP.cs 定义渲染管线类
+internal class CSRP : RenderPipeline { CRenderer crenderer = new CRenderer(); private bool isUseSRPBatching; public CSRP(bool isUseSRPBatching) { this.isUseSRPBatching = isUseSRPBatching; GraphicsSettings.useScriptableRenderPipelineBatching = isUseSRPBatching; } protected override void Render(ScriptableRenderContext context, Camera[] cameras) { foreach (Camera cam in cameras) { crenderer.</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://yathenstianbase.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -65,24 +79,6 @@ Feel free to contact with me : Stianbase@foxmail.com</description>
     </item>
     
     <item>
-      <title>AndroidSDK sdkmanager [sdkmanager 命令工具]</title>
-      <link>https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/</guid>
-      <description>在cmd窗口中设置临时javahome路径：
-set JAVA_HOME=WindowsPath sdkmanager工具路径 .\android-sdk-windows\tools\bin 帮助命令：
-sdkmanager &amp;ndash;help // 查看命令帮助 下载地址(将https改为http,将dl-ssl改为dl) http://dl-ssl.google.com/android/repository/tools_r25.2.5-windows.zip
-新建&amp;quot;SDK_ROOT&amp;quot;目录, cd SDK_ROOT\tools\bin
-sdkmanager &amp;ndash;list 列出所有版本
-sdkmanager &amp;ldquo;platform-tools&amp;rdquo; 生成包含相关工具的platform-tools目录
-sdkmanager &amp;ldquo;platforms;android-25&amp;rdquo; 生成包含相关工具的platforms目录
-sdkmanager &amp;ldquo;build-tools;25.0.0&amp;rdquo; 生成包含相关工具的build-tools目录
-如果报一下错误， 确保jdk版本对应android sdk版本：
-Exception in thread &amp;#34;main&amp;#34; java.lang.UnsupportedClassVersionError: com/android/sdklib/tool/SdkManagerCli : Unsupported m ajor.minor version 52.0 at java.lang.ClassLoader.defineClass1(Native Method) at java.lang.ClassLoader.defineClassCond(ClassLoader.java:632) at java.lang.ClassLoader.defineClass(ClassLoader.java:616) at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141) at java.net.URLClassLoader.defineClass(URLClassLoader.java:283) at java.net.URLClassLoader.access$000(URLClassLoader.java:58) at java.net.URLClassLoader$1.run(URLClassLoader.java:197) at java.security.AccessController.doPrivileged(Native Method) at java.net.URLClassLoader.findClass(URLClassLoader.java:190) at java.lang.ClassLoader.loadClass(ClassLoader.java:307) at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301) at java.lang.ClassLoader.loadClass(ClassLoader.java:248) Could not find the main class: com.</description>
-    </item>
-    
-    <item>
       <title>BubbleSort [冒泡排序可视化]</title>
       <link>https://yathenstianbase.github.io/posts/dsa/bubblesort-code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -98,7 +94,8 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/posts/unity3d/build-android-apk-in-unity/</guid>
-      <description> 在Unity中发布Android包，一般需要以下工具: JDK Android SDK Android NDK &amp;ndash; 原生组件需要 Gradle 以上工具可以使用Unity提供的，也可以自己单独配置; </description>
+      <description>在Unity中发布Android包，一般需要以下工具:
+JDK Android SDK Android NDK &amp;ndash; 原生组件需要 Gradle 以上工具可以使用Unity提供的，也可以自己单独配置; 在Preference -&amp;gt; External Tools面板中设置路径;</description>
     </item>
     
     <item>
@@ -147,9 +144,7 @@ float System.Single double System.</description>
       <description>相关插件 UnityNativeTool
 Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
 UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
-git clone 源码之后解压到Unity项目的Assets目录下；
-添加空物体，并挂载DllManipulatorScript脚本;
-启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
+安装方式: git clone 源码之后解压到Unity项目的Assets目录下,某些Unity版本如果出现报错(error CS0246),是因为Api Compatibility Level设置为.net standard 2.0，而.net standard 2.0不支持emit导致的； 添加空物体，并挂载DllManipulatorScript脚本; 启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; Dll path pattern默认有&amp;quot;__&amp;quot;,Unity打包之后可能会识别不了;(去掉或者打包手动修改可修复) 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
 Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文件: NativeTest.h 头文件
 #pragma once #include &amp;lt;cstring&amp;gt; extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeStart(); extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeEnd(); //编译器常量 extern &amp;#34;C&amp;#34; __declspec(dllexport) constexpr float ConstexprMethod(); extern &amp;#34;C&amp;#34; __declspec(dllexport) bool ReturnMyType(); class NativeClass { public: int i; float f; double d; char c; char* cp; NativeClass(); ~NativeClass(); }; template&amp;lt;typename MyType&amp;gt; struct my_type_struct { static constexpr bool boolval = false; }; template&amp;lt;typename E&amp;gt; constexpr bool has_flag(E lhs, E rhs) { //return (lhs &amp;amp; rhs) == rhs; return (lhs == rhs); } NativeTest.</description>
     </item>
@@ -192,6 +187,22 @@ public static void OpenWindow() { EditorWindow.GetWindow&amp;lt;DemoEditorWindow
     </item>
     
     <item>
+      <title>Euler And Quaternion in Unity3D [Euler And Quaternion in Unity3D 欧拉角与四元数]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</guid>
+      <description>Unity3d之欧拉角与四元数Link to heading&amp;ndash;slerp 球形插值
+在Unity中，如果需要更改物体的Rotation，并不能像更改Position一样直接对Vector赋值进行更改，因为Rotation是四元数的方式。
+这时，可以对Rotation进行四元数的转换成欧拉角，做到赋值更改旋转轴数值。
+四元数转欧拉角
+Vector3 eulerAngles = transform.rotation.eulerAngles; 欧拉角转四元数：
+Vector3 eulerAngles = new Vector3(0f, 30f, 0f); // 1 Quaternion rotation = Quaternion.Euler(rotationVector3); // 2 Quaternion rotation = Quaternion.Euler(eulerAngles.x, eulerAngles.y, eulerAngles.z); // 赋值 transform.rotation = rotation; 使用赋值欧拉角方式进行旋转
+void Update() { // 直接赋值欧拉角，需要三个变量一起赋值 Vector3 currentEulerAngles += new Vector3(x, y, z) * Time.deltaTime * rotationSpeed; transform.eulerAngles = currentEulerAngles; } 使用四元数进行线性旋转
+// void Update() { Turning(dir); } public void Turning(Vector3 dirVec) { if (dirVec !</description>
+    </item>
+    
+    <item>
       <title>FactoryMethod Pattern [工厂方法]</title>
       <link>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -229,10 +240,11 @@ ffmpeg -i input.mp4 -s 240x160 -r 10 -b 512K output.avi 压缩命令
       
       <guid>https://yathenstianbase.github.io/posts/plugin/imgui-for-unity/</guid>
       <description>安装方式
-使用git url方式安装 原版: https://github.com/realgamessoftware/dear-imgui-unity.git 镜像: https://hub.nuaa.cf/realgamessoftware/dear-imgui-unity.git 硬盘: 拷贝其他项目下的缓存目录，package安装方式选择 &amp;ldquo;Add pacakge from disk&amp;rdquo;,选中缓存目录中的package.json文件 使用方式
+使用git url方式安装 原版: https://github.com/realgamessoftware/dear-imgui-unity.git 镜像: https://hub.nuaa.cf/realgamessoftware/dear-imgui-unity.git 硬盘: 拷贝其他项目下的缓存目录，package安装方式选择 &amp;ldquo;Add pacakge from disk&amp;rdquo;,选中缓存目录中的package.json文件 Unity2021版本之后可使用uimgui 使用方式
 using ImGuiNET; // void OnEnable() { ImGuiUn.Layout += OnLayout; } void OnDisable() { ImGuiUn.Layout -= OnLayout; } void OnLayout() { ImGui.ShowDemoWindow(); // 展示Demo窗口 ImGui.Text($&amp;#34;显示&amp;#34;); // 测试文本 if (ImGui.Button(&amp;#34;Save&amp;#34;)) // 测试按钮 { Debug.Log(&amp;#34;Save&amp;#34;); } } Bug
 CreateWindow(ImGuiWindowFlags.NavFlattened); 此方法的使用会导致unity2019.4奔溃; Ref：
 Imgui的C#版本封装
+基于Imgui的Uimgui,Unity2022版本之后可用
 Imgui的Unity版本封装
 Imgui的C版本封装</description>
     </item>
@@ -249,6 +261,25 @@ Imgui的C版本封装</description>
 interface IMonsterPool { GameObject Create(GameObject mon); GameObject Get(); void Recycle(GameObject mon); int CurrentCount(); void EmptyAll(); } 定义类,实现上述接口,考虑到要实行单例模式,而且并没有挂载的需要,因此不继承MonoBehaviour；
 public class MonsterPool : IMonsterPool 定义容量的大小,当然可以从配置文件中来进行读取,并且使用了单例模式来获取对象池实例,这肯定不是唯一的办法,对象池的个数可以根据实际来调整,相应的取消单例模式即可; orignalMon为 初始的实例化对象,之后由对象池创建并管理的对象实际上都是此对象的克隆.可以在游戏开始加载时候从Assetbundle中来进行获取或直接Resource方法获取(不过此方法Unity官方似乎不推荐,可能有较大的资源性能等损耗);
 #region protected int _Max = 50; protected int _Min = 0; protected int _DefCap = 5; private static List&amp;lt;GameObject&amp;gt; mons; private static MonsterPool _Instance; public static MonsterPool Instance { get { if (_Instance == null) { _Instance = new MonsterPool(); } return _Instance; } } private GameObject orignalMon; #endregion 构造方法创建对象的容器List,如果有多种不同的对象,也可以使用Dictionary;Init() 方法是传入的是初始对象,也可以说是模板^.</description>
+    </item>
+    
+    <item>
+      <title>Light in Unity3D [Light in Unity3D 渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/shader/lightinunity3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/shader/lightinunity3d/</guid>
+      <description>根据 Introduction to 3D Game Programming with DirectX 一书介绍,渲染流程大致分为以下几个步骤
+Input Assembler (IA) stage [输入装配阶段]
+此阶段将读取顶点和索引，并将这些数据组合成突击和图元;
+Vertex Shader (VS) stage [顶点着色器阶段]
+此阶段可以自定义编码，在Unity的shader格式中,&amp;quot;#pragma vertex vert&amp;quot;便是代表声明一个顶点着色器函数； v2f vert(appdata v) { v2f o; o.pos = UnityObjectToClipPos(v.vertex); return o; } Hull Shader (HS) stage
+Tessellator stage
+Domain Shader (DS) stage
+Geometry Shader (GS)
+Rasterizer (RS) stage
+Pixel Shader (PS) stage [像素着色器阶段]
+也称为片元着色器,属于可以自定义代码的阶段,处理每一个像素片段的颜色属性;在Unity中可以通过 &amp;ldquo;#pragma fragment frag&amp;quot;申明; half4 frag(v2f i) : COLOR { return _Color; } Output Merger (OM) stage</description>
     </item>
     
     <item>
@@ -297,6 +328,15 @@ MONTY-OUM是这部Anime的作者，属于很全能的作者，如果你去观看
 从RWBY一开始的四部特色鲜明的预告片放出，如果找回之前发布现场的视频观看，当时的现场观众激动情绪可以说不亚于现在3A游戏发布会现场；在经历第一二季的放出，随着第三季预告放出，RWBY在小众圈子可以说声名鹊起。大概也是在那个时候，我看到了这部不可思议的作品，并留下了独一无二的印象。
 当我带着不可思议的映像回顾这部Anime并了解到其作者时，同时也确确实实理解了一个词 &amp;ndash; &amp;ldquo;天妒英才&amp;rdquo;。Monty没有完成这部作品，而留下的空白却没有人能够填补，可能有人愿意付出他那样的努力，但是可能其创作方式却独特到没人能效仿，在其后的季集中，RWBY似乎丧失了灵魂。
 RWBY的前三季，难忘而又遗憾&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Shadow of the Tomb Raider UI Cap [古墓丽影UI截图]</title>
+      <link>https://yathenstianbase.github.io/posts/design/ui/shadow-of-the-tomb-raider-ui-cap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/design/ui/shadow-of-the-tomb-raider-ui-cap/</guid>
+      <description> </description>
     </item>
     
     <item>
@@ -398,6 +438,15 @@ Unity 5.x Shaders and Effects Cookbook(2nd), [虽然是基于Unity5老旧版本�
 Game Programming Patterns, 由 Electronic Arts 工程师编写; Unity3D引擎
 Catlike Coding, [一位荷兰开发者&amp;rsquo;Jasper Flick&amp;rsquo;的个人技术博客,介绍了相当多Unity的技术以及Demo的展示]; 其他
 The Art and Rendering of Remember Me, [GDC上游戏&amp;quot;Remember Me&amp;quot;的渲染技术介绍]; James Gurney-Color and Light | 詹姆斯·格尔尼《色彩与光线》, [了解色彩] 动画师生存手册, [了解传统动画]; </description>
+    </item>
+    
+    <item>
+      <title>小游戏</title>
+      <link>https://yathenstianbase.github.io/projects/mini-game/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/projects/mini-game/</guid>
+      <description></description>
     </item>
     
   </channel>

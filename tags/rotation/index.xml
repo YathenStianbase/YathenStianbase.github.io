@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rotation on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/tags/rotation/</link>
+    <description>Recent content in Rotation on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/rotation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Euler And Quaternion in Unity3D [Euler And Quaternion in Unity3D 欧拉角与四元数]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</guid>
+      <description>Unity3d之欧拉角与四元数Link to heading&amp;ndash;slerp 球形插值
+在Unity中，如果需要更改物体的Rotation，并不能像更改Position一样直接对Vector赋值进行更改，因为Rotation是四元数的方式。
+这时，可以对Rotation进行四元数的转换成欧拉角，做到赋值更改旋转轴数值。
+四元数转欧拉角
+Vector3 eulerAngles = transform.rotation.eulerAngles; 欧拉角转四元数：
+Vector3 eulerAngles = new Vector3(0f, 30f, 0f); // 1 Quaternion rotation = Quaternion.Euler(rotationVector3); // 2 Quaternion rotation = Quaternion.Euler(eulerAngles.x, eulerAngles.y, eulerAngles.z); // 赋值 transform.rotation = rotation; 使用赋值欧拉角方式进行旋转
+void Update() { // 直接赋值欧拉角，需要三个变量一起赋值 Vector3 currentEulerAngles += new Vector3(x, y, z) * Time.deltaTime * rotationSpeed; transform.eulerAngles = currentEulerAngles; } 使用四元数进行线性旋转
+// void Update() { Turning(dir); } public void Turning(Vector3 dirVec) { if (dirVec !</description>
+    </item>
+    
+  </channel>
+</rss>

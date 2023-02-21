@@ -15,9 +15,7 @@
       <description>相关插件 UnityNativeTool
 Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
 UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
-git clone 源码之后解压到Unity项目的Assets目录下；
-添加空物体，并挂载DllManipulatorScript脚本;
-启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
+安装方式: git clone 源码之后解压到Unity项目的Assets目录下,某些Unity版本如果出现报错(error CS0246),是因为Api Compatibility Level设置为.net standard 2.0，而.net standard 2.0不支持emit导致的； 添加空物体，并挂载DllManipulatorScript脚本; 启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; Dll path pattern默认有&amp;quot;__&amp;quot;,Unity打包之后可能会识别不了;(去掉或者打包手动修改可修复) 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
 Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文件: NativeTest.h 头文件
 #pragma once #include &amp;lt;cstring&amp;gt; extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeStart(); extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeEnd(); //编译器常量 extern &amp;#34;C&amp;#34; __declspec(dllexport) constexpr float ConstexprMethod(); extern &amp;#34;C&amp;#34; __declspec(dllexport) bool ReturnMyType(); class NativeClass { public: int i; float f; double d; char c; char* cp; NativeClass(); ~NativeClass(); }; template&amp;lt;typename MyType&amp;gt; struct my_type_struct { static constexpr bool boolval = false; }; template&amp;lt;typename E&amp;gt; constexpr bool has_flag(E lhs, E rhs) { //return (lhs &amp;amp; rhs) == rhs; return (lhs == rhs); } NativeTest.</description>
     </item>

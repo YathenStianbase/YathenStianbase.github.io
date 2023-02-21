@@ -15,9 +15,7 @@
       <description>相关插件 UnityNativeTool
 Unity提供的原生插件加载功能，在加载之后不能主动卸载，需要重新启动Unity，如果需要调试C++代码的话会非常的不方便;
 UnityNativeTool可以很方便的在Editor Runtime期间进行C++ dll 的加载和卸载;
-git clone 源码之后解压到Unity项目的Assets目录下；
-添加空物体，并挂载DllManipulatorScript脚本;
-启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
+安装方式: git clone 源码之后解压到Unity项目的Assets目录下,某些Unity版本如果出现报错(error CS0246),是因为Api Compatibility Level设置为.net standard 2.0，而.net standard 2.0不支持emit导致的； 添加空物体，并挂载DllManipulatorScript脚本; 启用&amp;quot;Enable in Edit Mode&amp;quot;, 开启后会自动在程序退出时候卸载C++ dll; Dll path pattern默认有&amp;quot;__&amp;quot;,Unity打包之后可能会识别不了;(去掉或者打包手动修改可修复) 接下来可以编写C++ 和 C#文件做交互了，一个简单的示例：
 Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文件: NativeTest.h 头文件
 #pragma once #include &amp;lt;cstring&amp;gt; extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeStart(); extern &amp;#34;C&amp;#34; __declspec(dllexport) float NativeEnd(); //编译器常量 extern &amp;#34;C&amp;#34; __declspec(dllexport) constexpr float ConstexprMethod(); extern &amp;#34;C&amp;#34; __declspec(dllexport) bool ReturnMyType(); class NativeClass { public: int i; float f; double d; char c; char* cp; NativeClass(); ~NativeClass(); }; template&amp;lt;typename MyType&amp;gt; struct my_type_struct { static constexpr bool boolval = false; }; template&amp;lt;typename E&amp;gt; constexpr bool has_flag(E lhs, E rhs) { //return (lhs &amp;amp; rhs) == rhs; return (lhs == rhs); } NativeTest.</description>
     </item>
@@ -29,10 +27,11 @@ Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文�
       
       <guid>https://yathenstianbase.github.io/posts/plugin/imgui-for-unity/</guid>
       <description>安装方式
-使用git url方式安装 原版: https://github.com/realgamessoftware/dear-imgui-unity.git 镜像: https://hub.nuaa.cf/realgamessoftware/dear-imgui-unity.git 硬盘: 拷贝其他项目下的缓存目录，package安装方式选择 &amp;ldquo;Add pacakge from disk&amp;rdquo;,选中缓存目录中的package.json文件 使用方式
+使用git url方式安装 原版: https://github.com/realgamessoftware/dear-imgui-unity.git 镜像: https://hub.nuaa.cf/realgamessoftware/dear-imgui-unity.git 硬盘: 拷贝其他项目下的缓存目录，package安装方式选择 &amp;ldquo;Add pacakge from disk&amp;rdquo;,选中缓存目录中的package.json文件 Unity2021版本之后可使用uimgui 使用方式
 using ImGuiNET; // void OnEnable() { ImGuiUn.Layout += OnLayout; } void OnDisable() { ImGuiUn.Layout -= OnLayout; } void OnLayout() { ImGui.ShowDemoWindow(); // 展示Demo窗口 ImGui.Text($&amp;#34;显示&amp;#34;); // 测试文本 if (ImGui.Button(&amp;#34;Save&amp;#34;)) // 测试按钮 { Debug.Log(&amp;#34;Save&amp;#34;); } } Bug
 CreateWindow(ImGuiWindowFlags.NavFlattened); 此方法的使用会导致unity2019.4奔溃; Ref：
 Imgui的C#版本封装
+基于Imgui的Uimgui,Unity2022版本之后可用
 Imgui的Unity版本封装
 Imgui的C版本封装</description>
     </item>

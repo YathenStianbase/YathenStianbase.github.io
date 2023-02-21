@@ -80,11 +80,29 @@
     </item>
     
     <item>
+      <title>game</title>
+      <link>https://yathenstianbase.github.io/tags/game/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>imgui</title>
       <link>https://yathenstianbase.github.io/tags/imgui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/tags/imgui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>light</title>
+      <link>https://yathenstianbase.github.io/tags/light/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/tags/light/</guid>
       <description></description>
     </item>
     
@@ -107,11 +125,11 @@
     </item>
     
     <item>
-      <title>sdkmanager</title>
-      <link>https://yathenstianbase.github.io/tags/sdkmanager/</link>
+      <title>Rotation</title>
+      <link>https://yathenstianbase.github.io/tags/rotation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yathenstianbase.github.io/tags/sdkmanager/</guid>
+      <guid>https://yathenstianbase.github.io/tags/rotation/</guid>
       <description></description>
     </item>
     
@@ -130,6 +148,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/tags/time/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UI</title>
+      <link>https://yathenstianbase.github.io/tags/ui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/tags/ui/</guid>
       <description></description>
     </item>
     

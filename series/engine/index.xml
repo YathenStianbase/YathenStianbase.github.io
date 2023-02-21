@@ -7,6 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/series/engine/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Euler And Quaternion in Unity3D [Euler And Quaternion in Unity3D 欧拉角与四元数]</title>
+      <link>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</guid>
+      <description>Unity3d之欧拉角与四元数Link to heading&amp;ndash;slerp 球形插值
+在Unity中，如果需要更改物体的Rotation，并不能像更改Position一样直接对Vector赋值进行更改，因为Rotation是四元数的方式。
+这时，可以对Rotation进行四元数的转换成欧拉角，做到赋值更改旋转轴数值。
+四元数转欧拉角
+Vector3 eulerAngles = transform.rotation.eulerAngles; 欧拉角转四元数：
+Vector3 eulerAngles = new Vector3(0f, 30f, 0f); // 1 Quaternion rotation = Quaternion.Euler(rotationVector3); // 2 Quaternion rotation = Quaternion.Euler(eulerAngles.x, eulerAngles.y, eulerAngles.z); // 赋值 transform.rotation = rotation; 使用赋值欧拉角方式进行旋转
+void Update() { // 直接赋值欧拉角，需要三个变量一起赋值 Vector3 currentEulerAngles += new Vector3(x, y, z) * Time.deltaTime * rotationSpeed; transform.eulerAngles = currentEulerAngles; } 使用四元数进行线性旋转
+// void Update() { Turning(dir); } public void Turning(Vector3 dirVec) { if (dirVec !</description>
+    </item>
+    
+    <item>
+      <title>Light in Unity3D [Light in Unity3D 渲染管线]</title>
+      <link>https://yathenstianbase.github.io/posts/shader/lightinunity3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/shader/lightinunity3d/</guid>
+      <description>根据 Introduction to 3D Game Programming with DirectX 一书介绍,渲染流程大致分为以下几个步骤
+Input Assembler (IA) stage [输入装配阶段]
+此阶段将读取顶点和索引，并将这些数据组合成突击和图元;
+Vertex Shader (VS) stage [顶点着色器阶段]
+此阶段可以自定义编码，在Unity的shader格式中,&amp;quot;#pragma vertex vert&amp;quot;便是代表声明一个顶点着色器函数； v2f vert(appdata v) { v2f o; o.pos = UnityObjectToClipPos(v.vertex); return o; } Hull Shader (HS) stage
+Tessellator stage
+Domain Shader (DS) stage
+Geometry Shader (GS)
+Rasterizer (RS) stage
+Pixel Shader (PS) stage [像素着色器阶段]
+也称为片元着色器,属于可以自定义代码的阶段,处理每一个像素片段的颜色属性;在Unity中可以通过 &amp;ldquo;#pragma fragment frag&amp;quot;申明; half4 frag(v2f i) : COLOR { return _Color; } Output Merger (OM) stage</description>
+    </item>
+    
+    <item>
       <title>Time Control In Unity</title>
       <link>https://yathenstianbase.github.io/posts/unity3d/time-control-in-unity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

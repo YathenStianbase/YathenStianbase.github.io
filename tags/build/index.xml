@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/posts/unity3d/build-android-apk-in-unity/</guid>
-      <description> 在Unity中发布Android包，一般需要以下工具: JDK Android SDK Android NDK &amp;ndash; 原生组件需要 Gradle 以上工具可以使用Unity提供的，也可以自己单独配置; </description>
+      <description>在Unity中发布Android包，一般需要以下工具:
+JDK Android SDK Android NDK &amp;ndash; 原生组件需要 Gradle 以上工具可以使用Unity提供的，也可以自己单独配置; 在Preference -&amp;gt; External Tools面板中设置路径;</description>
     </item>
     
   </channel>

@@ -26,6 +26,8 @@
     <loc>https://yathenstianbase.github.io/tags/shortcodes/</loc>
     <lastmod>2023-01-04T11:51:36+01:00</lastmod>
   </url><url>
+    <loc>https://yathenstianbase.github.io/posts/unity3d/unity3dscriptablerenderingpileline/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/series/abi/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/about/</loc>
@@ -39,10 +41,6 @@
     <loc>https://yathenstianbase.github.io/posts/android/android-adb-tool/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/series/android-develope/</loc>
-  </url><url>
-    <loc>https://yathenstianbase.github.io/categories/android-sdk-tool/</loc>
-  </url><url>
-    <loc>https://yathenstianbase.github.io/posts/android/androidsdk-sdkmanager/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/series/application-binary-interface/</loc>
   </url><url>
@@ -76,6 +74,8 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/d3d/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/categories/design/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/categories/design-pattern/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/dsa/</loc>
@@ -86,13 +86,19 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/series/engine/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/posts/unity3d/eulerandquaternioninunity3d/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/posts/designpattern/factorymethod-pattern/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/ffmpeg/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/ffmpeg-commands/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/tags/game/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/series/game-plugin/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/series/gameplay/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/categories/graphic/</loc>
   </url><url>
@@ -101,6 +107,10 @@
     <loc>https://yathenstianbase.github.io/posts/plugin/imgui-for-unity/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/unity3d/implement-simple-object-pool-in-unity/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/light/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/shader/lightinunity3d/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/lua/</loc>
   </url><url>
@@ -118,15 +128,17 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/renderingpipeline/</loc>
   </url><url>
-    <loc>https://yathenstianbase.github.io/thinking/rwby/</loc>
+    <loc>https://yathenstianbase.github.io/tags/rotation/</loc>
   </url><url>
-    <loc>https://yathenstianbase.github.io/tags/sdkmanager/</loc>
+    <loc>https://yathenstianbase.github.io/thinking/rwby/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/series/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/shader/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/categories/shader/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/design/ui/shadow-of-the-tomb-raider-ui-cap/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/stencilbuffer/</loc>
   </url><url>
@@ -137,6 +149,8 @@
     <loc>https://yathenstianbase.github.io/tags/time/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/unity3d/time-control-in-unity/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/ui/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/unity/</loc>
   </url><url>
@@ -167,5 +181,7 @@
     <loc>https://yathenstianbase.github.io/categories/video-tool/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/projects/books-reading/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/projects/mini-game/</loc>
   </url>
 </urlset>
