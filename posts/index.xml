@@ -110,6 +110,41 @@ Visual Studio 2019 新建 C++ library 项目,并编写如下头文件和C++文�
     </item>
     
     <item>
+      <title>CocosCreator  [CocosCreator 接口]</title>
+      <link>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator/</guid>
+      <description>cocos3D
+动画 支持gtlf格式; 有Animation动画编辑器; 可以在脚本中使用Animation组件; 支持动画事件，可在关键帧中插入事件; Collider2D 需要RigidBody2D的enable contact listener属性设置为 True,才会触发碰撞效果并触发碰撞事件; this._rigid.type = ERigidBody2DType.Dynamic; // Bug? 在碰撞回调函数中使用此语句，会发生严重报错! </description>
+    </item>
+    
+    <item>
+      <title>CocosCreator API [CocosCreator 接口]</title>
+      <link>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-api/</guid>
+      <description>使用Quat进行旋转
+碰撞体事件绑定
+2D on()绑定 start () { PhysicsSystem2D.instance.on(Contact2DType.BEGIN_CONTACT, this.onBeinContact, this); } onBeinContact (a: Collider2D, b: Collider2D) { this.addContact(a); } 从欧拉角转换为四元数
+// 三个维度的角度数值 @property(Number) public x: number = 0; @property(Number) public y: number = 0; @property(Number) public z: number = 0; update(deltaTime: number) { this.node.rotation = Quat.fromEuler(new Quat(),this.x,this.y,this.z); this.p +=deltaTime * 1; } 射线检测
+点检测需要传入UI坐标上的点: PhysicsSystem2D.instance.testPoint(event.getUILocation()) 自带的tween动画api
+旋转 import { tween } from &amp;#39;cc&amp;#39;; @property time = 6; @property angle = 360; start () { tween(this.</description>
+    </item>
+    
+    <item>
+      <title>CocosCreator Project Upgrade  [CocosCreator 旧项目升级]</title>
+      <link>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-project-upgrade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-project-upgrade/</guid>
+      <description>版本为2.x的项目先升级至2.4.3及以上版本,再进行3.x版本以上升级;
+代码API的变化
+声明类型 // 新 旧 // @type(t) @property(t) // @integer @property(CCInteger) // @float @property(CCFloat) // @string @property(CCString) // @boolean @property(CCBoolean) --- import { _decorator, CCInteger, Node } from &amp;#39;cc&amp;#39;; const { ccclass, property, integer, float, boolean, string, type } = _decorator; @ccclass class MyClass { @integer // Declare that the cc type of the property _id is a Cocos integer private _id = 0; @type(Node) // Declare that the cc type of the property _targetNode is Node private _targetNode: Node | null = null; @type([Node]) // declare the cc type of the property _children as a Node array private _children: Node[] = []; @property private _count = 0; // the cc type is not declared, and it is inferred from the evaluation result of the initializer as a Cocos floating point number @type(String) // Warning: Constructor should not be used String // equivalent to CCString private _name: string = &amp;#39;&amp;#39;; @property private _children2 = []; // The cc type is not declared, inferred from the evaluation result of the initializer: the element is an undefined Cocos array } Ref</description>
+    </item>
+    
+    <item>
       <title>Command Pattern [命令模式]</title>
       <link>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -244,6 +279,15 @@ Pixel Shader (PS) stage [像素着色器阶段]
 nil boolean number // 双精度类型的实浮点数； string // 字符串类型； function // 由 C 或 Lua 编写的函数； userdata // 与C语言的struct类似，可用于和C语言做交互； thread // lua提供的线程类，但是更接近协程； table // Lua 中的表（table）其实是一个&amp;quot;关联数组&amp;quot;（associative arrays），数组的索引可以是数字、字符串或表类型。在 Lua 里，table 的创建是通过&amp;quot;构造表达式&amp;quot;来完成，最简单构造表达式是{}，用来创建一个空表。 声明一个Lua变量,默认值为nil;
 A= -- 不赋值,默认为nil print(A) -- 显示nil类型 print(type(A)) -- 显示nil类型 print(nil) -- 显示nil类型 print(type(nil)) -- 显示nil类型 声明boolean类型
 T=true F=false print(type(T)) -- 显示boolean类型 print(type(F)) -- 显示boolean类型 if(not(nil)) then print(&amp;#39;nil is false&amp;#39;) -- 显示此行，nil在if表达式中相当于false else print(&amp;#39;nil is true&amp;#39;) end if(0) then print(&amp;#39;0 is true&amp;#39;) -- 显示此行，数字0在if表达式中相当于true else print(&amp;#39;nil is false&amp;#39;) end 声明number类型</description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>https://yathenstianbase.github.io/posts/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/others/</guid>
+      <description></description>
     </item>
     
     <item>

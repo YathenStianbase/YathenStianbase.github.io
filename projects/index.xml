@@ -7,6 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CocosMario</title>
+      <link>https://yathenstianbase.github.io/projects/minigame/cocosmario/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/projects/minigame/cocosmario/</guid>
+      <description>使用CocosCreator制作的类马里奥的平台跳跃小游戏,包含3D场景和2D场景;
+项目地址: https://github.com/YathenStianbase/CocosMario-like https://yathenstianbase.github.io/projects/minigame/cocosmario/
+运行截图:
+&amp;ndash;&amp;gt; </description>
+    </item>
+    
+    <item>
       <title>书籍阅读</title>
       <link>https://yathenstianbase.github.io/projects/books-reading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -18,15 +30,6 @@ Unity 5.x Shaders and Effects Cookbook(2nd), [虽然是基于Unity5老旧版本�
 Game Programming Patterns, 由 Electronic Arts 工程师编写; Unity3D引擎
 Catlike Coding, [一位荷兰开发者&amp;rsquo;Jasper Flick&amp;rsquo;的个人技术博客,介绍了相当多Unity的技术以及Demo的展示]; 其他
 The Art and Rendering of Remember Me, [GDC上游戏&amp;quot;Remember Me&amp;quot;的渲染技术介绍]; James Gurney-Color and Light | 詹姆斯·格尔尼《色彩与光线》, [了解色彩] 动画师生存手册, [了解传统动画]; </description>
-    </item>
-    
-    <item>
-      <title>小游戏</title>
-      <link>https://yathenstianbase.github.io/projects/mini-game/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/projects/mini-game/</guid>
-      <description></description>
     </item>
     
   </channel>

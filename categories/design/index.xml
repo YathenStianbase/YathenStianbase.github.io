@@ -7,21 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://yathenstianbase.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>CocosMario</title>
+      <link>https://yathenstianbase.github.io/projects/minigame/cocosmario/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/projects/minigame/cocosmario/</guid>
+      <description>使用CocosCreator制作的类马里奥的平台跳跃小游戏,包含3D场景和2D场景;
+项目地址: https://github.com/YathenStianbase/CocosMario-like https://yathenstianbase.github.io/projects/minigame/cocosmario/
+运行截图:
+&amp;ndash;&amp;gt; </description>
+    </item>
+    
+    <item>
       <title>Shadow of the Tomb Raider UI Cap [古墓丽影UI截图]</title>
       <link>https://yathenstianbase.github.io/posts/design/ui/shadow-of-the-tomb-raider-ui-cap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yathenstianbase.github.io/posts/design/ui/shadow-of-the-tomb-raider-ui-cap/</guid>
       <description> </description>
-    </item>
-    
-    <item>
-      <title>小游戏</title>
-      <link>https://yathenstianbase.github.io/projects/mini-game/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://yathenstianbase.github.io/projects/mini-game/</guid>
-      <description></description>
     </item>
     
   </channel>

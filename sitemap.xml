@@ -60,7 +60,23 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/plugin/c&#43;&#43;nativeforunity/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/categories/cocoscreator/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-api/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-project-upgrade/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/projects/minigame/cocosmario/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/code/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/posts/designpattern/command-pattern/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/componment/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/tags/config/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/contact/</loc>
   </url><url>
@@ -96,6 +112,8 @@
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/game/</loc>
   </url><url>
+    <loc>https://yathenstianbase.github.io/series/game-engine/</loc>
+  </url><url>
     <loc>https://yathenstianbase.github.io/series/game-plugin/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/series/gameplay/</loc>
@@ -117,6 +135,8 @@
     <loc>https://yathenstianbase.github.io/categories/lua-language/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/posts/lua/lua-variables/</loc>
+  </url><url>
+    <loc>https://yathenstianbase.github.io/posts/others/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/tags/plugin/</loc>
   </url><url>
@@ -181,7 +201,5 @@
     <loc>https://yathenstianbase.github.io/categories/video-tool/</loc>
   </url><url>
     <loc>https://yathenstianbase.github.io/projects/books-reading/</loc>
-  </url><url>
-    <loc>https://yathenstianbase.github.io/projects/mini-game/</loc>
   </url>
 </urlset>

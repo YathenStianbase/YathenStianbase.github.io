@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Componment on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/tags/componment/</link>
+    <description>Recent content in Componment on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/componment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CocosCreator  [CocosCreator 接口]</title>
+      <link>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator/</guid>
+      <description>cocos3D
+动画 支持gtlf格式; 有Animation动画编辑器; 可以在脚本中使用Animation组件; 支持动画事件，可在关键帧中插入事件; Collider2D 需要RigidBody2D的enable contact listener属性设置为 True,才会触发碰撞效果并触发碰撞事件; this._rigid.type = ERigidBody2DType.Dynamic; // Bug? 在碰撞回调函数中使用此语句，会发生严重报错! </description>
+    </item>
+    
+  </channel>
+</rss>

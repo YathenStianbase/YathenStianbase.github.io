@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>config on Paradoxical</title>
+    <link>https://yathenstianbase.github.io/tags/config/</link>
+    <description>Recent content in config on Paradoxical</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://yathenstianbase.github.io/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CocosCreator Project Upgrade  [CocosCreator 旧项目升级]</title>
+      <link>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-project-upgrade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yathenstianbase.github.io/posts/cocoscreator/cocoscreator-project-upgrade/</guid>
+      <description>版本为2.x的项目先升级至2.4.3及以上版本,再进行3.x版本以上升级;
+代码API的变化
+声明类型 // 新 旧 // @type(t) @property(t) // @integer @property(CCInteger) // @float @property(CCFloat) // @string @property(CCString) // @boolean @property(CCBoolean) --- import { _decorator, CCInteger, Node } from &amp;#39;cc&amp;#39;; const { ccclass, property, integer, float, boolean, string, type } = _decorator; @ccclass class MyClass { @integer // Declare that the cc type of the property _id is a Cocos integer private _id = 0; @type(Node) // Declare that the cc type of the property _targetNode is Node private _targetNode: Node | null = null; @type([Node]) // declare the cc type of the property _children as a Node array private _children: Node[] = []; @property private _count = 0; // the cc type is not declared, and it is inferred from the evaluation result of the initializer as a Cocos floating point number @type(String) // Warning: Constructor should not be used String // equivalent to CCString private _name: string = &amp;#39;&amp;#39;; @property private _children2 = []; // The cc type is not declared, inferred from the evaluation result of the initializer: the element is an undefined Cocos array } Ref</description>
+    </item>
+    
+  </channel>
+</rss>
